@@ -1,0 +1,36 @@
+2024-07-28 15:10:46 | Level: WARN  | Thread: http-bio-8080-exec-4 | Source: LoginServlet.doPost | Message: Invalid login attempt: flexibleoli.11@gmail.com
+2024-07-28 15:10:56 | Level: ERROR | Thread: http-bio-8080-exec-6 | Source: EmployeeDAOImpl.addEmployee | Message: Error adding employee
+java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`ems_schema`.`employee`, CONSTRAINT `employee_ibfk_1` FOREIGN KEY (`role_id`) REFERENCES `role` (`role_id`))
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:118) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:916) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1061) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1009) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1320) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:994) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at dao.EmployeeDAOImpl.addEmployee(EmployeeDAOImpl.java:30) ~[classes/:?]
+	at controller.RegistrationServlet.doPost(RegistrationServlet.java:46) ~[classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:647) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:728) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:222) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:123) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:502) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:171) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:100) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:953) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:408) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1041) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:603) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:312) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[?:?]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[?:?]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+2024-07-28 15:11:00 | Level: WARN  | Thread: http-bio-8080-exec-8 | Source: LoginServlet.doPost | Message: Invalid login attempt: flexibleoli.11@gmail.com
+2024-07-28 15:18:29 | Level: WARN  | Thread: http-bio-8080-exec-1 | Source: LoginServlet.doPost | Message: Invalid login attempt: flexibleoli.11@gmail.com
+2024-07-28 15:18:34 | Level: WARN  | Thread: http-bio-8080-exec-2 | Source: LoginServlet.doPost | Message: Invalid login attempt: flexibleoli.11@gmail.com
