@@ -35,7 +35,7 @@ public class LoginServlet extends HttpServlet {
                 HttpSession session = request.getSession();
                 session.setAttribute("employee", employee);
                 logger.info("Employee logged in: {}", username);
-                response.sendRedirect("index.jsp");
+                response.sendRedirect("mainpage.jsp");
             } else {
                 logger.warn("Invalid login attempt: {}", username);
                 request.setAttribute("error", "Invalid username or password");

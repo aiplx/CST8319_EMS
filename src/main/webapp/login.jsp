@@ -9,9 +9,8 @@
 <html>
 <head>
     <title>Login</title>
-<%--    <link rel="stylesheet" href="css/loginStyle.css">--%>
-<%--    <link rel="stylesheet" href="css/EMS_Style.css">--%>
-<%--    <link rel="icon" type="image/x-icon" href="Images/favicon.ico">--%>
+    <link rel="stylesheet" href="css/loginStyle.css">
+
 </head>
 <body>
 <%--<%@ include file="header.jsp"%>--%>

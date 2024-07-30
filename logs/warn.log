@@ -34,3 +34,4 @@ java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child 
 2024-07-28 15:11:00 | Level: WARN  | Thread: http-bio-8080-exec-8 | Source: LoginServlet.doPost | Message: Invalid login attempt: flexibleoli.11@gmail.com
 2024-07-28 15:18:29 | Level: WARN  | Thread: http-bio-8080-exec-1 | Source: LoginServlet.doPost | Message: Invalid login attempt: flexibleoli.11@gmail.com
 2024-07-28 15:18:34 | Level: WARN  | Thread: http-bio-8080-exec-2 | Source: LoginServlet.doPost | Message: Invalid login attempt: flexibleoli.11@gmail.com
+2024-07-28 23:28:44 | Level: WARN  | Thread: http-bio-8080-exec-2 | Source: LoginServlet.doPost | Message: Invalid login attempt: ABCA

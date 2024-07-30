@@ -1,0 +1,45 @@
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    padding: 20px;
+}
+
+.login-container {
+    max-width: 400px;
+    margin: auto;
+    padding: 40px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.login-container form div {
+    margin-bottom: 15px;
+}
+
+.login-container label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.login-container input[type="email"],
+.login-container input[type="password"],
+.login-container input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.login-container input[type="submit"] {
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+}
+
+.login-container input[type="submit"]:hover {
+    background-color: #555;
+}
