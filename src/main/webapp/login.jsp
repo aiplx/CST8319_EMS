@@ -13,7 +13,7 @@
 
 </head>
 <body>
-<%--<%@ include file="header.jsp"%>--%>
+<%@ include file="header.jsp"%>
 <div class="content">
     <div class="login-container">
         <h2>Login</h2>
@@ -39,6 +39,6 @@
         </form>
     </div>
 </div>
-<%--<%@ include file="footer.jsp"%>--%>
+<%@ include file="footer.jsp"%>
 </body>
 </html>

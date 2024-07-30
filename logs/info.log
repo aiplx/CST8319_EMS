@@ -66,3 +66,51 @@ java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child 
 2024-07-29 22:18:59 | Level: INFO  | Thread: http-bio-8080-exec-9 | Source: EmployeeDAOImpl.getEmployeeByUsernameAndPassword | Message: Employee retrieved: dto.EmployeeDTO@445f1e36
 2024-07-29 22:18:59 | Level: INFO  | Thread: http-bio-8080-exec-9 | Source: LoginServlet.doPost | Message: Employee logged in: employee
 2024-07-29 22:19:03 | Level: INFO  | Thread: http-bio-8080-exec-3 | Source: LogoutServlet.doPost | Message: Employee logged out: employee
+2024-07-29 22:58:08 | Level: INFO  | Thread: http-bio-8080-exec-4 | Source: DatabaseUtil.getConnection | Message: Database connection established
+2024-07-29 22:58:08 | Level: INFO  | Thread: http-bio-8080-exec-4 | Source: EmployeeDAOImpl.getEmployeeByUsernameAndPassword | Message: Employee retrieved: dto.EmployeeDTO@4b9d3e5d
+2024-07-29 22:58:08 | Level: INFO  | Thread: http-bio-8080-exec-4 | Source: LoginServlet.doPost | Message: Employee logged in: ABCA
+2024-07-29 23:36:32 | Level: INFO  | Thread: http-bio-8080-exec-3 | Source: DatabaseUtil.getConnection | Message: Database connection established
+2024-07-29 23:36:32 | Level: INFO  | Thread: http-bio-8080-exec-3 | Source: EmployeeDAOImpl.getEmployeeByUsernameAndPassword | Message: Employee retrieved: dto.EmployeeDTO@32ea614a
+2024-07-29 23:36:32 | Level: INFO  | Thread: http-bio-8080-exec-3 | Source: LoginServlet.doPost | Message: Employee logged in: ABCA
+2024-07-30 01:05:57 | Level: INFO  | Thread: http-bio-8080-exec-1 | Source: DatabaseUtil.getConnection | Message: Database connection established
+2024-07-30 01:05:57 | Level: INFO  | Thread: http-bio-8080-exec-1 | Source: EmployeeDAOImpl.getEmployeeByUsernameAndPassword | Message: Employee retrieved: dto.EmployeeDTO@42181a6c
+2024-07-30 01:05:57 | Level: INFO  | Thread: http-bio-8080-exec-1 | Source: LoginServlet.doPost | Message: Employee logged in: ABCA
+2024-07-30 01:07:58 | Level: INFO  | Thread: http-bio-8080-exec-3 | Source: DatabaseUtil.<init> | Message: Database connection established
+2024-07-30 01:07:58 | Level: INFO  | Thread: http-bio-8080-exec-3 | Source: EmployeeDAOImpl.getEmployeeByUsernameAndPassword | Message: Employee retrieved: dto.EmployeeDTO@6640a261
+2024-07-30 01:07:58 | Level: INFO  | Thread: http-bio-8080-exec-3 | Source: LoginServlet.doPost | Message: Employee logged in: ABCA
+2024-07-30 01:14:58 | Level: INFO  | Thread: http-bio-8080-exec-5 | Source: DatabaseUtil.<init> | Message: Database connection established
+2024-07-30 01:14:58 | Level: INFO  | Thread: http-bio-8080-exec-5 | Source: EmployeeDAOImpl.getEmployeeByUsernameAndPassword | Message: Employee retrieved: dto.EmployeeDTO@2301fa32
+2024-07-30 01:14:58 | Level: INFO  | Thread: http-bio-8080-exec-5 | Source: LoginServlet.doPost | Message: Employee logged in: ABCA
+2024-07-30 01:27:38 | Level: INFO  | Thread: http-bio-8080-exec-5 | Source: DatabaseUtil.getConnection | Message: Database connection established
+2024-07-30 01:27:38 | Level: INFO  | Thread: http-bio-8080-exec-5 | Source: EmployeeDAOImpl.getEmployeeByUsernameAndPassword | Message: Employee retrieved: dto.EmployeeDTO@5cb1b5b
+2024-07-30 01:27:38 | Level: INFO  | Thread: http-bio-8080-exec-5 | Source: LoginServlet.doPost | Message: Employee logged in: ABCA
+2024-07-30 01:32:03 | Level: INFO  | Thread: http-bio-8080-exec-1 | Source: DatabaseUtil.getConnection | Message: Database connection established
+2024-07-30 01:32:03 | Level: WARN  | Thread: http-bio-8080-exec-1 | Source: LoginServlet.doPost | Message: Invalid login attempt: Test111111
+2024-07-30 01:32:11 | Level: INFO  | Thread: http-bio-8080-exec-1 | Source: DatabaseUtil.getConnection | Message: Database connection established
+2024-07-30 01:32:11 | Level: WARN  | Thread: http-bio-8080-exec-1 | Source: LoginServlet.doPost | Message: Invalid login attempt: ABCA
+2024-07-30 01:32:23 | Level: INFO  | Thread: http-bio-8080-exec-1 | Source: DatabaseUtil.getConnection | Message: Database connection established
+2024-07-30 01:32:23 | Level: WARN  | Thread: http-bio-8080-exec-1 | Source: LoginServlet.doPost | Message: Invalid login attempt: ABCA
+2024-07-30 01:33:02 | Level: INFO  | Thread: http-bio-8080-exec-10 | Source: DatabaseUtil.getConnection | Message: Database connection established
+2024-07-30 01:33:02 | Level: INFO  | Thread: http-bio-8080-exec-10 | Source: EmployeeDAOImpl.getEmployeeByUsernameAndPassword | Message: Employee retrieved: dto.EmployeeDTO@7680d4c7
+2024-07-30 01:33:02 | Level: INFO  | Thread: http-bio-8080-exec-10 | Source: LoginServlet.doPost | Message: Employee logged in: ABCA
+2024-07-30 01:33:42 | Level: INFO  | Thread: http-bio-8080-exec-4 | Source: DatabaseUtil.<init> | Message: Database connection established
+2024-07-30 01:33:42 | Level: INFO  | Thread: http-bio-8080-exec-4 | Source: EmployeeDAOImpl.getEmployeeByUsernameAndPassword | Message: Employee retrieved: dto.EmployeeDTO@2f437587
+2024-07-30 01:33:42 | Level: INFO  | Thread: http-bio-8080-exec-4 | Source: LoginServlet.doPost | Message: Employee logged in: ABCA
+2024-07-30 01:34:51 | Level: INFO  | Thread: http-bio-8080-exec-10 | Source: DatabaseUtil.getConnection | Message: Database connection established
+2024-07-30 01:34:51 | Level: INFO  | Thread: http-bio-8080-exec-10 | Source: EmployeeDAOImpl.getEmployeeByUsernameAndPassword | Message: Employee retrieved: dto.EmployeeDTO@74b80e36
+2024-07-30 01:34:51 | Level: INFO  | Thread: http-bio-8080-exec-10 | Source: LoginServlet.doPost | Message: Employee logged in: ABCA
+2024-07-30 01:36:33 | Level: INFO  | Thread: http-bio-8080-exec-5 | Source: DatabaseUtil.getConnection | Message: Database connection established
+2024-07-30 01:36:33 | Level: INFO  | Thread: http-bio-8080-exec-5 | Source: EmployeeDAOImpl.getEmployeeByUsernameAndPassword | Message: Employee retrieved: dto.EmployeeDTO@6354bf17
+2024-07-30 01:36:33 | Level: INFO  | Thread: http-bio-8080-exec-5 | Source: LoginServlet.doPost | Message: Employee logged in: ABCA
+2024-07-30 01:43:37 | Level: INFO  | Thread: http-bio-8080-exec-7 | Source: DatabaseUtil.getConnection | Message: Database connection established
+2024-07-30 01:43:37 | Level: INFO  | Thread: http-bio-8080-exec-7 | Source: EmployeeDAOImpl.getEmployeeByUsernameAndPassword | Message: Employee retrieved: dto.EmployeeDTO@7dcb9967
+2024-07-30 01:43:37 | Level: INFO  | Thread: http-bio-8080-exec-7 | Source: LoginServlet.doPost | Message: Employee logged in: ABCA
+2024-07-30 01:54:45 | Level: INFO  | Thread: http-bio-8080-exec-4 | Source: DatabaseUtil.getConnection | Message: Database connection established
+2024-07-30 01:54:45 | Level: INFO  | Thread: http-bio-8080-exec-4 | Source: EmployeeDAOImpl.getEmployeeByUsernameAndPassword | Message: Employee retrieved: dto.EmployeeDTO@668f51f7
+2024-07-30 01:54:45 | Level: INFO  | Thread: http-bio-8080-exec-4 | Source: LoginServlet.doPost | Message: Employee logged in: ABCA
+2024-07-30 01:58:39 | Level: INFO  | Thread: http-bio-8080-exec-3 | Source: DatabaseUtil.<init> | Message: Database connection established
+2024-07-30 01:58:39 | Level: INFO  | Thread: http-bio-8080-exec-3 | Source: EmployeeDAOImpl.getEmployeeByUsernameAndPassword | Message: Employee retrieved: dto.EmployeeDTO@218471d
+2024-07-30 01:58:39 | Level: INFO  | Thread: http-bio-8080-exec-3 | Source: LoginServlet.doPost | Message: Employee logged in: ABCA
+2024-07-30 02:02:49 | Level: INFO  | Thread: http-bio-8080-exec-1 | Source: DatabaseUtil.getConnection | Message: Database connection established
+2024-07-30 02:02:49 | Level: INFO  | Thread: http-bio-8080-exec-1 | Source: EmployeeDAOImpl.getEmployeeByUsernameAndPassword | Message: Employee retrieved: dto.EmployeeDTO@4677e4dc
+2024-07-30 02:02:49 | Level: INFO  | Thread: http-bio-8080-exec-1 | Source: LoginServlet.doPost | Message: Employee logged in: ABCA

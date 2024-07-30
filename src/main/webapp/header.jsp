@@ -14,7 +14,7 @@
                     out.println("<li><a href='LogoutServlet'>Logout</a></li>");
                 } else {
                     out.println("<li><a href='login.jsp'>Login</a></li>");
-                    out.println("<li><a href='registration.jsp'>Register</a></li>");
+                    out.println("<li><a href='register.jsp'>Register</a></li>");
                 }
             %>
         </ul>
