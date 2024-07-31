@@ -22,7 +22,7 @@
 <div class="mainContainer">
     <%
         EmployeeDTO employee = (EmployeeDTO) session.getAttribute("employee");
-        if (!(employee == null)) {
+        if (employee == null) {
             response.sendRedirect("login.jsp");
         }
 
