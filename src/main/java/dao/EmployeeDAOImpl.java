@@ -17,7 +17,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 
     @Override
     public void addEmployee(EmployeeDTO employee) {
-        String sql = "INSERT INTO employee (role_id, first_name, last_name, city, province, username, password) VALUES (?, ?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO employee (role_id, first_name, last_name, city, province, username, password, phone_number, email) VALUES (?, ?, ?, ?, ?, ?, ?,?,?)";
         try (Connection conn = DatabaseUtil.getInstance().getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
             stmt.setInt(1, employee.getRoleId());
@@ -27,6 +27,8 @@ public class EmployeeDAOImpl implements EmployeeDAO {
             stmt.setString(5, employee.getProvince());
             stmt.setString(6, employee.getUsername());
             stmt.setString(7, employee.getPassword());
+            stmt.setString(8,employee.getPhone());
+            stmt.setString(9,employee.getEmail());
             stmt.executeUpdate();
             logger.info("Employee added: {}", employee);
         } catch (SQLException e) {
@@ -91,6 +93,39 @@ public class EmployeeDAOImpl implements EmployeeDAO {
             logger.error("Error retrieving employee", e);
         }
         return employee;
+    }
+
+    @Override
+    public String getEmployeePhoneNumber(int employeeId) {
+        String query = "SELECT * FROM employee WHERE employee_id = ?";
+        String phone_number = "";
+        try(Connection conn = DatabaseUtil.getInstance().getConnection(); PreparedStatement stmt = conn.prepareStatement(query)){
+            ResultSet rs = stmt.executeQuery();
+            while (rs.next()) {
+                phone_number = rs.getString("phone_number");
+                logger.info("Phone number retrieved for Employee #" + employeeId + " : {}", phone_number);
+            }
+
+        }catch(Exception e){
+            logger.error("Error retrieving phone number: {}", e.getMessage());
+        }
+        return phone_number;
+    }
+
+    @Override
+    public String getEmployeeEmail(int employeeId) {
+        String query = "SELECT email FROM employee WHERE employee_id = ?";
+        String email;
+        try(Connection conn = DatabaseUtil.getInstance().getConnection(); PreparedStatement stmt = conn.prepareStatement(query)){
+            ResultSet rs = stmt.executeQuery();
+            while (rs.next()) {
+                email = rs.getString("email");
+                logger.info("Email retrieved for Employee #" + employeeId + " : {}", email);
+            }
+        }catch(Exception e){
+            logger.error("Error retrieving email: {}", e.getMessage());
+        }
+        return "";
     }
 
     @Override

@@ -18,6 +18,13 @@ public class RegistrationServlet extends HttpServlet {
     private EmployeeDAO employeeDAO = new EmployeeDAOImpl();
     private static final Logger logger = LogManager.getLogger(RegistrationServlet.class);
 
+
+    @Override
+    public void init() throws ServletException {
+        super.init();
+        logger.info("RegistrationServlet initialized");
+    }
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.getRequestDispatcher("register.jsp").forward(request, response);
@@ -31,6 +38,8 @@ public class RegistrationServlet extends HttpServlet {
         String province = request.getParameter("province");
         String username = request.getParameter("username");
         String password = request.getParameter("password");
+        String email = request.getParameter("email");
+        String phone = request.getParameter("phone");
         int roleId = Integer.parseInt(request.getParameter("roleId"));
 
         EmployeeDTO employee = new EmployeeDTO();
@@ -41,6 +50,8 @@ public class RegistrationServlet extends HttpServlet {
         employee.setUsername(username);
         employee.setPassword(password);
         employee.setRoleId(roleId);
+        employee.setEmail(email);
+        employee.setPhone(phone);
 
         try {
             employeeDAO.addEmployee(employee);

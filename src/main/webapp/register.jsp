@@ -25,6 +25,14 @@
             <input type="text" id="lastName" name="lastName" required>
         </div>
         <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required>
+        </div>
+        <div class="form-group">
             <label for="city">City:</label>
             <input type="text" id="city" name="city" required>
         </div>

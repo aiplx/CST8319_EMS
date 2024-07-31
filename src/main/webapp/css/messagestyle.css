@@ -1,0 +1,167 @@
+.mainContainer {
+    display: flex;
+    padding: 15px;
+    scroll-behavior: smooth;
+    position: relative;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    gap: 4px;
+}
+
+
+.messagesContainer {
+    margin: 20px 0;
+    flex: 1;
+    padding: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    border: black 2px solid;
+    border-radius: 0.2rem;
+
+}
+
+.create-message {
+    margin: 20px 0;
+    flex: 1;
+    padding: 15px;
+    justify-content: center;
+    overflow: hidden;
+    transition: max-height 0.1s ease-out;
+    background-color: cadetblue;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: stretch;
+    flex-direction: column;
+    border: gray 2px solid;
+    border-radius: 0.2rem;
+}
+
+
+.message-page-title{
+    align-self: center;
+}
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+
+    border: 1px solid #ccc;
+    border-radius:
+            3px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+input[type="submit"] {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 16px;
+
+}
+
+input[type="submit"]:hover {
+    background-color: #2980b9;
+}
+
+
+.message-card {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.message-header {
+    background-color: teal;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.message-header:hover{
+    background: cadetblue;
+}
+.message-body {
+    flex-grow: 1;
+    overflow: auto;
+    transition: max-height 0.3s ease-in-out;
+    display: none;
+    padding: 15px;
+}
+
+.my-nav {
+    display: block;
+    overflow: hidden;
+    padding: 10px;
+    background-color: #333;
+}
+
+.my-navbar-logo {
+    float: left;
+    height: 50px;
+    margin-right: 20px;
+}
+
+.my-nav ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+.my-nav ul li {
+    float: left;
+}
+
+.my-nav ul li a {
+    color: white;
+    padding: 14px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+
+}
+
+footer{
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding:15px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    color: #333;
+}
+
+a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
