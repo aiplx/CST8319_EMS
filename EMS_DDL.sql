@@ -117,7 +117,7 @@ CREATE TABLE IF NOT EXISTS `message` (
                                          `receiver_id` INT,
                                          `title` VARCHAR(200) NOT NULL, /* Added title field for messages - Mohamed 7/29/24*/
                                          `message_content` TEXT NOT NULL,
-                                         `is_read` BOOLEAN DEFAULT FALSE, /* Added boolean is_read field for messages - Mohamed 07/29/2024 */
+                                         `is_read` TINYINT NOT NULL DEFAULT '0', /* Added boolean is_read field for messages - Mohamed 07/29/2024 */
                                          `timestamp` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
                                          PRIMARY KEY (`message_id`),
                                          FOREIGN KEY (`sender_id`) REFERENCES `employee`(`employee_id`),
