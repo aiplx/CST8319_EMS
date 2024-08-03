@@ -1,6 +1,9 @@
 package dto;
 
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class Message {
 
     private long messageId;
@@ -9,6 +12,14 @@ public class Message {
     private String title;
     private String messageContent;
     private java.sql.Timestamp timestamp;
+    private String senderName;
+    private Boolean isRead;
+
+    public String getFormattedTime() {
+        SimpleDateFormat formatter = new SimpleDateFormat("EEEE MMMM d',' yyyy 'at' h:mm a");
+        Date date = new Date(timestamp.getTime());
+        return formatter.format(date);
+    }
 
     public String getSenderName() {
         return senderName;
@@ -17,9 +28,6 @@ public class Message {
     public void setSenderName(String senderName) {
         this.senderName = senderName;
     }
-
-    private String senderName;
-
 
 
     public long getSenderId() {
@@ -63,5 +71,25 @@ public class Message {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public Boolean getRead() {
+        return isRead;
+    }
+
+    public Boolean isRead(){
+        return isRead != null && isRead;
+    }
+
+    public void setRead(Boolean read) {
+        isRead = read;
+    }
+
+    public long getMessageId() {
+        return messageId;
+    }
+
+    public void setMessageId(long messageId) {
+        this.messageId = messageId;
     }
 }

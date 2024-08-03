@@ -10,5 +10,7 @@ public interface MessageDAO {
     long getSenderID(Long messageID);
     long getReceiverID(long receiverID);
     String getEmployeeFullName(long employeeID);
+    int getUnreadMessages(long id);
+    void markAsRead(long id);
 
 }

@@ -5,6 +5,7 @@ import dao.EmployeeDAOImpl;
 import dto.EmployeeDTO;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import service.notifications.NotificationService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -28,6 +29,7 @@ public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
+        NotificationService notificationService = new NotificationService();
 
         try {
             EmployeeDTO employee = employeeDAO.getEmployeeByUsernameAndPassword(username, password);
@@ -35,7 +37,10 @@ public class LoginServlet extends HttpServlet {
                 HttpSession session = request.getSession();
                 session.setAttribute("employee", employee);
                 logger.info("Employee logged in: {}", username);
+                int numOfUnreadMessages = notificationService.numOfUnreadMessages(employee.getEmployeeId());
+                session.setAttribute("unreadMessages", numOfUnreadMessages );
                 response.sendRedirect("mainpage.jsp");
+
             } else {
                 logger.warn("Invalid login attempt: {}", username);
                 request.setAttribute("error", "Invalid username or password");

@@ -9,13 +9,12 @@
 <%@ page import="java.util.List" %>
 <%@ page import="dto.Message" %>
 <%@ page import="dto.EmployeeDTO" %>
+<%@ page import="java.util.Collections" %>
 <html>
 
 <head>
     <title>Your Messages</title>
-    <link rel="stylesheet" href="css/messagestyle.css">
-
-
+    <link rel="stylesheet" href="css/my-style.css">
 </head>
 <body>
 <%@ include file="navbar-header.jsp" %>
@@ -25,84 +24,41 @@
         if (employee == null) {
             response.sendRedirect("login.jsp");
         }
+        int senderID = employee.getEmployeeId();
 
     %>
     <div class="messagesContainer">
         <h1 class="message-page-title"> Messages </h1>
 
-        <div class="message-card">
-            <div class="message-header" onclick="expandCard(this)">
-                <span> <b>Sender</b>: Sender Name <b>Topic</b> - Topic title <b>@</b> 1/1/1 00:00pm</span>
-            </div>
-            <div class="message-body">
-                <i>Sender ID: <br/> </i>
-                Message Body is held here!
-                The content of this message is very long.The content of this message is very
-                long.The content of this message is very long.The content of this message is very long.The content of
-                this message is very long.The content of this message is very long.The content of this message is very
-                long.The content of this message is very long.The content of this message is very long.
-            </div>
-        </div>
-        <div class="message-card">
-            <div class="message-header" onclick="expandCard(this)">
-                <span> <b>Sender</b>: Sender Name <b>Topic</b> - Topic title <b>@</b> 1/1/1 00:00pm</span>
-            </div>
-            <div class="message-body">
-                <i>Sender ID: <br/> </i>
-                Message Body is held here!
-            </div>
-        </div>
-        <div class="message-card">
-            <div class="message-header" onclick="expandCard(this)">
-                <span> <b>Sender</b>: Sender Name <b>Topic</b> - Topic title <b>@</b> 1/1/1 00:00pm</span>
-            </div>
-            <div class="message-body">
-                <i>Sender ID: <br/> </i>
-                Message Body is held here!
-            </div>
-        </div>
-        <div class="message-card">
-            <div class="message-header" onclick="expandCard(this)">
-                <span>Sender: Sender Name Topic - Topic name @ 1/1/1 00:00pm</span>
-            </div>
-            <div class="message-body">
-                <i>Sender ID: <br/> </i>
-                Message Body.
-                The content of this message is very long.The content of this message is very
-                long.The content of this message is very long.The content of this message is very long.The content of
-                this message is very long.The content of this message is very long.The content of this message is very
-                long.The content of this message is very long.The content of this message is very long.
-            </div>
-        </div>
-        <div class="message-card">
-            <div class="message-header" onclick="expandCard(this)">
-                Sender: Sender Name Topic - Topic name @ 1/1/1 00:00pm
-            </div>
-            <div class="message-body">
-                Message Body
-            </div>
-        </div>
-
         <%
 
             List<Message> messages = (List<Message>) request.getAttribute("messages");
-            if (messages != null) {
-                for (Message message : messages) {
+            Collections.reverse(messages);
+            for (Message message : messages) {
         %>
 
         <div class="message-card">
             <div class="message-header" onclick="expandCard(this)">
-                <span> <b>Sender:</b> <%=message.getSenderName()%> <b>Topic</b> - <%=message.getTitle()%> <b>@</b> <%=message.getTimestamp()%></span>
+
+                <span> <% if(!message.getRead() ) {%> <b>**** Unread Message ****</b> <br/> <%}%>
+                    <b>Sender:</b> <%=message.getSenderName()%> <br><b>Topic</b> - <%=message.getTitle()%> <br/>  <%=message.getFormattedTime()%></span>
             </div>
             <div class="message-body">
-                <i> Sender ID:  <%=message.getSenderId()%> <br/> </i>
+                <i> Sender ID:  <%=message.getSenderId()%>  MessageID: <%=message.getMessageId()%><br/> </i>
 
                 <%=message.getMessageContent()%>
+
+                <% if (!message.isRead()) { %>
+                <form action="MessagesServlet" method="post">
+                    <input type="hidden" name="action" value="markMessage">
+                    <input type="hidden" name="messageID" value="<%= message.getMessageId() %>">
+                    <input type="submit" value="Mark as Read">
+                </form>
+                <% } %>
             </div>
         </div>
 
         <%
-                }
             }
 
         %>
@@ -111,8 +67,8 @@
     <div class="create-message">
         <h1 class="message-page-title">Send a New Message</h1>
         <div class="message-form">
-            <form action="Messages" method="post">
-                <input type="hidden" name="senderId" value="<%=session.getAttribute("employeeID")%>">
+            <form action="MessagesServlet" method="post">
+                <input type="hidden" name="senderId" value="<%= senderID%>">
                 <label for="receiverId">Receiver ID:</label>
                 <input type="number" id="receiverId" name="receiverId" required><br><br>
                 <label for="title">Title:</label>
@@ -128,8 +84,8 @@
 <%@ include file="myfooter.jsp" %>
 <script>
     function expandCard(card) {
-        var messageCard = card.closest(".message-card");
-        var messageContent = messageCard.querySelector('.message-body');
+        const messageCard = card.closest(".message-card");
+        const messageContent = messageCard.querySelector('.message-body');
         if (messageContent.style.display === "none" || messageContent.style.display === "") {
             messageContent.style.display = "block";
         } else {

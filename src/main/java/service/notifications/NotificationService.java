@@ -4,10 +4,14 @@ package service.notifications;
 import dao.EmployeeDAOImpl;
 import dao.message.MessageDAOImpl;
 import dto.Message;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.sql.Timestamp;
 import java.util.List;
 
 public class NotificationService {
+    private static final Logger logger = LogManager.getLogger(NotificationService.class);
 
     private final EmailService emailService;
     private final SmsService smsService;
@@ -21,8 +25,16 @@ public class NotificationService {
         this.employeeDAO = new EmployeeDAOImpl();
     }
 
-    public List<Message> getAllUserMessages(int employeeID){
+    public List<Message> getAllUserMessages(int employeeID) {
         return messageDAO.getAllUserMessages(employeeID);
+    }
+
+    public int numOfUnreadMessages(int employeeID) {
+        return messageDAO.getUnreadMessages(employeeID);
+    }
+
+    public void markAsRead(int messageID) {
+        messageDAO.markAsRead(messageID);
     }
 
     public void createNotification(int senderId, int receiverId, String title, String content) {
@@ -33,12 +45,24 @@ public class NotificationService {
         message.setMessageContent(content);
         message.setTimestamp(new Timestamp(System.currentTimeMillis()));
 
-        // Save the message
+        String phone = employeeDAO.getEmployeePhoneNumber(receiverId);
+        String email = employeeDAO.getEmployeeEmail(receiverId);
+        String senderName = employeeDAO.getEmployeeFullNameById(senderId);
         messageDAO.saveMessage(message);
 
+        logger.info("Employee details Email: {} Phone: {}", email, phone);
+
+
         //Send email and sms
-        smsService.sendSms(employeeDAO.getEmployeePhoneNumber(receiverId),content );
-        emailService.sendEmail(employeeDAO.getEmployeeEmail(receiverId),"Message From Group18-EMS",content);
+        try {
+            String contentWithHeader = "Sent from: " + senderName + "\n" + "Title: " + title + "\n \n" + content;
+            smsService.sendSms(phone, contentWithHeader);
+            emailService.sendEmail(email, "Message From Group18-EMS", contentWithHeader);
+            logger.info("Sent Email TO: {} , Content : {} ", email, contentWithHeader);
+            logger.info("Sent text To: {} , Content: {}", phone, contentWithHeader);
+        } catch (Exception e) {
+            logger.error("Error sending email, or text ERROR: {}", e.getMessage());
+        }
 
     }
 

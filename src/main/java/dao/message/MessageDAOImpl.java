@@ -1,5 +1,6 @@
 package dao.message;
 
+import dao.EmployeeDAOImpl;
 import dto.Message;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -15,6 +16,11 @@ import java.util.List;
 
 public class MessageDAOImpl implements MessageDAO {
     private static final Logger logger = LogManager.getLogger(MessageDAOImpl.class);
+    private EmployeeDAOImpl employeeDAO;
+
+    public MessageDAOImpl() {
+        this.employeeDAO = new EmployeeDAOImpl();
+    }
 
     @Override
     public void saveMessage(Message message) {
@@ -23,16 +29,14 @@ public class MessageDAOImpl implements MessageDAO {
             stmt.setLong(1, message.getSenderId());
             stmt.setLong(2, message.getReceiverId());
             stmt.setString(3, message.getTitle());
-            stmt.setString(5, message.getMessageContent());
+            stmt.setString(4, message.getMessageContent());
             stmt.setTimestamp(5, new Timestamp(message.getTimestamp().getTime()));
             stmt.executeUpdate();
 
             logger.info("Message saved to database: {}", message);
-
         } catch (Exception e) {
             logger.error("Error saving message : {}", e.getMessage());
         }
-
     }
 
 
@@ -47,14 +51,21 @@ public class MessageDAOImpl implements MessageDAO {
             ResultSet rs = stmt.executeQuery();
             while (rs.next()) {
                 Message message = new Message();
+                message.setMessageId(rs.getLong("message_id"));
                 message.setSenderId(rs.getLong("sender_id"));
                 message.setReceiverId(rs.getLong("receiver_id"));
-                message.setTitle("title");
+                message.setTitle(rs.getString("title"));
                 message.setMessageContent(rs.getString("message_content"));
                 message.setTimestamp(rs.getTimestamp("timestamp"));
-                message.setSenderName(rs.getString("first_name" + " " + rs.getString("last_name")));
+                int isReadValue = rs.getInt("is_read");
+                message.setRead(isReadValue == 1);
                 messages.add(message);
             }
+            for (Message message : messages) {
+                String senderName = employeeDAO.getEmployeeFullNameById((int) message.getSenderId());
+                message.setSenderName(senderName);
+            }
+
         } catch (Exception e) {
             logger.error("Error getting all messages : {}", e.getMessage());
         }
@@ -110,5 +121,35 @@ public class MessageDAOImpl implements MessageDAO {
             logger.error("Error getting full name : {}", e.getMessage());
         }
         return fullName;
+    }
+
+    @Override
+    public int getUnreadMessages(long id) {
+        int numOfUnreadMessage = 0;
+        String query = "SELECT COUNT(*) as count FROM message WHERE receiver_id=? AND is_read = 0";
+        try (Connection conn = DatabaseUtil.getInstance().getConnection(); PreparedStatement stmt = conn.prepareStatement(query)) {
+            stmt.setLong(1, id);
+            ResultSet rs = stmt.executeQuery();
+            while (rs.next()) {
+                numOfUnreadMessage = rs.getInt("count");
+            }
+
+        } catch (Exception e) {
+            logger.error("Error getting unread messages : {}", e.getMessage());
+        }
+        return numOfUnreadMessage;
+    }
+
+    @Override
+    public void markAsRead(long id) {
+        String query = "UPDATE message SET is_read=1 WHERE message_id=?";
+        try (Connection conn = DatabaseUtil.getInstance().getConnection(); PreparedStatement stmt = conn.prepareStatement(query)) {
+            stmt.setLong(1, id);
+            stmt.executeUpdate();
+            logger.info("Message marked as read: {}", id);
+
+        } catch (Exception e) {
+            logger.error("Error marking message as read: MessageID: {}  Error: {}", id, e.getMessage());
+        }
     }
 }
