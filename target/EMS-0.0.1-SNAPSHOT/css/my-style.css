@@ -1,0 +1,280 @@
+.mainContainer {
+    display: flex;
+    padding: 15px;
+    scroll-behavior: smooth;
+    position: relative;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    gap: 20px;
+}
+
+.scheduleContainer{
+    display:flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    border-radius: 0.2rem;
+    position: relative;
+    height: 80vh;
+    width: auto;
+}
+.scheduleTable{
+    margin: auto;
+    align-items: center;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    justify-content: center;
+}
+.scheduleTable h1 {
+    text-align: center;
+}
+
+.scheduleTable table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.scheduleTable th,
+.scheduleTable td {
+    text-align: center;
+    padding: 8px;
+    border: 1px solid #ddd;
+}
+
+#management-container > *{
+    position: relative;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 0.2rem;
+    height: fit-content;
+    width: fit-content;
+}
+
+.add-employee-form{
+    padding:15px;
+}
+.page-heading{
+    text-align: center;
+}
+.employee-list-headings{
+    font-size: 20px;
+    border: solid 1px black;
+}
+td{
+    border: solid 1px black;
+    text-align: center;
+}
+.form-group{
+    display:block;
+}
+.messagesContainer, .create-message {
+    margin: 20px 0;
+    padding: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 0.2rem;
+    height: fit-content;
+}
+
+.messagesContainer {
+    flex: 1;
+    border: black 2px solid;
+}
+
+.create-message {
+    align-items: flex-start;
+    overflow: hidden;
+    background-color: cadetblue;
+    border: gray 2px solid;
+}
+
+.message-content {
+    padding: 10px;
+    margin: 10px;
+}
+
+.message-card .message-button input[type="submit"] {
+    width: auto;
+    justify-self: center;
+    background-color: mediumturquoise;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.message-card .message-button input[type="submit"]:hover {
+    background-color: darkblue;
+}
+
+.message-page-title {
+    text-align: center;
+}
+
+label {
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+input, textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+input[type="submit"] {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+input[type="submit"]:hover {
+    background-color: #2980b9;
+}
+
+.message-card {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.message-header {
+    background-color: teal;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.message-header:hover {
+    background: cadetblue;
+}
+
+.message-body {
+    flex-grow: 1;
+    overflow: auto;
+    transition: max-height 0.3s ease-in-out;
+    display: none;
+    padding: 15px;
+}
+
+.my-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #333;
+    overflow: hidden;
+}
+
+.my-navbar-logo {
+    float: left;
+    height: 50px;
+    margin-right: 20px;
+}
+
+.my-nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.my-nav ul li {
+    float: left;
+}
+
+.my-nav ul li a {
+    color: white;
+    padding: 14px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+}
+
+.my-nav ul li a:hover {
+    text-decoration: underline;
+}
+
+.notification-icon {
+    display: none;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    font-size: 12px;
+
+    margin-left: 5px;
+}
+
+.notification-icon.visible {
+    display: inline-block;
+}
+
+.logout {
+    margin-left: auto;
+    list-style: none;
+}
+
+.logout form {
+    margin: 0;
+}
+
+.logout input[type="submit"] {
+    border: solid white thin;
+    cursor: pointer;
+    font-size: 16px;
+    background-color: darkred;
+    color: white;
+    padding: 14px 20px;
+    text-decoration: none;
+}
+
+.logout input[type="submit"]:hover {
+    text-decoration: underline;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: auto;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    color: #333;
+}
+
+a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
