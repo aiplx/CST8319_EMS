@@ -1,8 +1,9 @@
-package controller;
+package controller.employeemanagement;
 
 
-import dao.ScheduleDAO;
-import dao.ScheduleDAOImpl;
+import dao.schedule.ScheduleDAO;
+import dao.schedule.ScheduleDAOImpl;
+import dto.EmployeeDTO;
 import dto.ScheduleDTO;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -12,21 +13,40 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.sql.Date;
 import java.sql.Time;
 import java.util.List;
 
-@WebServlet("/manageSchedules")
+@WebServlet(urlPatterns = {"/manageSchedules", "/yourSchedule", "/schedule"})
 public class ManageSchedulesServlet extends HttpServlet {
     private ScheduleDAO scheduleDAO = new ScheduleDAOImpl();
     private static final Logger logger = LogManager.getLogger(ManageSchedulesServlet.class);
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<ScheduleDTO> schedules = scheduleDAO.getAllSchedules();
-        request.setAttribute("schedules", schedules);
-        request.getRequestDispatcher("manageSchedules.jsp").forward(request, response);
+
+        HttpSession session = request.getSession();
+        EmployeeDTO employeeDTO = (EmployeeDTO) session.getAttribute("employee");
+        logger.info("Role of employee logged in : {}", employeeDTO.getRoleId());
+
+        if (employeeDTO == null || employeeDTO.getRoleId() != 1 && employeeDTO.getRoleId() != 2) {
+            request.getRequestDispatcher("login.jsp").forward(request, response);
+        }else if (employeeDTO.getRoleId() == 2){
+            List<ScheduleDTO> schedules = scheduleDAO.getSchedulesByEmployeeId(employeeDTO.getEmployeeId());
+            request.setAttribute("schedules", schedules);
+            request.getRequestDispatcher("viewSchedule.jsp").forward(request, response);
+            logger.info("Schedules retrieved for employee: {}", schedules.size());
+
+
+        }else{
+            List<ScheduleDTO> schedules = scheduleDAO.getAllSchedules();
+            request.setAttribute("schedules", schedules);
+            logger.info("Schedules retrieved: {}", schedules.size());
+            request.getRequestDispatcher("manageSchedules.jsp").forward(request, response);
+
+        }
     }
 
     @Override

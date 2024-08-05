@@ -1,7 +1,7 @@
 package service.notifications;
 
 
-import dao.EmployeeDAOImpl;
+import dao.employee.EmployeeDAOImpl;
 import dao.message.MessageDAOImpl;
 import dto.Message;
 import org.apache.logging.log4j.LogManager;
