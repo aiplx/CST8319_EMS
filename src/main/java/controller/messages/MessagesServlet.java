@@ -1,4 +1,4 @@
-package controller;
+package controller.messages;
 
 import dto.EmployeeDTO;
 import dto.Message;

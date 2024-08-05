@@ -1,6 +1,6 @@
 package dao.message;
 
-import dao.EmployeeDAOImpl;
+import dao.employee.EmployeeDAOImpl;
 import dto.Message;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -63,7 +63,9 @@ public class MessageDAOImpl implements MessageDAO {
             }
             for (Message message : messages) {
                 String senderName = employeeDAO.getEmployeeFullNameById((int) message.getSenderId());
+                String recipientName = employeeDAO.getEmployeeFullNameById((int) message.getReceiverId());
                 message.setSenderName(senderName);
+                message.setRecieverName(recipientName);
             }
 
         } catch (Exception e) {

@@ -1,4 +1,4 @@
-package dao;
+package dao.schedule;
 
 import dto.ScheduleDTO;
 import org.apache.logging.log4j.LogManager;
@@ -105,5 +105,30 @@ public class ScheduleDAOImpl implements ScheduleDAO {
             logger.error("Error retrieving all schedules", e);
         }
         return schedules;
+    }
+
+    @Override
+    public List<ScheduleDTO> getSchedulesByEmployeeId(int employeeId) {
+        List<ScheduleDTO> employeeSchedule = new ArrayList<>();
+        String query = "SELECT * FROM schedule WHERE employee_id = ? order by date desc";
+        try(Connection conn = DatabaseUtil.getInstance().getConnection();
+            PreparedStatement stmt = conn.prepareStatement(query)){
+            stmt.setInt(1, employeeId);
+            ResultSet rs = stmt.executeQuery();
+            while (rs.next()) {
+                ScheduleDTO schedule = new ScheduleDTO();
+                schedule.setScheduleId(rs.getInt("schedule_id"));
+                schedule.setEmployeeId(rs.getInt("employee_id"));
+                schedule.setDate(rs.getDate("date"));
+                schedule.setStartTime(rs.getTime("start_time"));
+                schedule.setEndTime(rs.getTime("end_time"));
+                employeeSchedule.add(schedule);
+            }
+            logger.info("Retrieved schedule for employee ID: {} \n schedules {}", employeeId, employeeSchedule.size());
+        }catch (Exception e){
+            logger.error("Error retrieving schedules : {}", e.getMessage());
+        }
+
+        return employeeSchedule;
     }
 }

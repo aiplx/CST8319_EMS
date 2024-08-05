@@ -1,4 +1,4 @@
-package controller;
+package controller.messages;
 
 import dto.EmployeeDTO;
 import org.apache.logging.log4j.LogManager;

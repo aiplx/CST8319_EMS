@@ -1,7 +1,7 @@
-package controller;
+package controller.employeemanagement;
 
-import dao.EmployeeDAO;
-import dao.EmployeeDAOImpl;
+import dao.employee.EmployeeDAO;
+import dao.employee.EmployeeDAOImpl;
 import dto.EmployeeDTO;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -27,6 +27,7 @@ public class ManageEmployeesServlet extends HttpServlet {
         List<EmployeeDTO> employees = employeeDAO.getAllEmployees();
         request.setAttribute("employees", employees);
         request.getRequestDispatcher("manageEmployees.jsp").forward(request, response);
+        logger.info("Number of employees retrieved: " + employeeDAO.getAllEmployees().size());
     }
 
     @Override

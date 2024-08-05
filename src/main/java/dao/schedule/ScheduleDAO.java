@@ -1,4 +1,4 @@
-package dao;
+package dao.schedule;
 
 import dto.ScheduleDTO;
 import java.util.List;
@@ -9,5 +9,6 @@ public interface ScheduleDAO {
     void deleteSchedule(int scheduleId);
     ScheduleDTO getScheduleById(int scheduleId);
     List<ScheduleDTO> getAllSchedules();
+    List<ScheduleDTO> getSchedulesByEmployeeId(int employeeId);
 }
 

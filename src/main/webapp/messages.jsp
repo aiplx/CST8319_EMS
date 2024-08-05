@@ -40,21 +40,26 @@
         <div class="message-card">
             <div class="message-header" onclick="expandCard(this)">
 
-                <span> <% if(!message.getRead() ) {%> <b>**** Unread Message ****</b> <br/> <%}%>
-                    <b>Sender:</b> <%=message.getSenderName()%> <br><b>Topic</b> - <%=message.getTitle()%> <br/>  <%=message.getFormattedTime()%></span>
+                <span> <% if(!message.getRead() && message.getSenderId() != senderID) {%> <b>**** Unread Message ****</b> <br/> <%}%>
+                    <b>Sender:</b> <%=message.getSenderName()%> &emsp; <b>Recipient :</b> <%=message.getRecieverName()%><br><b>Topic</b> - <%=message.getTitle()%> <br/>  <%=message.getFormattedTime()%></span>
             </div>
             <div class="message-body">
-                <i> Sender ID:  <%=message.getSenderId()%>  MessageID: <%=message.getMessageId()%><br/> </i>
+                <i> Sender ID:  <%=message.getSenderId()%>  <br/> Message Status: <%= (message.isRead())? "Read" : "Unread"%> </i>
 
-                <%=message.getMessageContent()%>
+                <p class="message-content">
 
-                <% if (!message.isRead()) { %>
-                <form action="MessagesServlet" method="post">
+                    <%=message.getMessageContent()%>
+
+                </p>
+
+
+                <% if (!message.isRead() && message.getSenderId() != employee.getEmployeeId()) { %>
+                <form action="MessagesServlet" class="message-button" method="post">
                     <input type="hidden" name="action" value="markMessage">
                     <input type="hidden" name="messageID" value="<%= message.getMessageId() %>">
                     <input type="submit" value="Mark as Read">
                 </form>
-                <% } %>
+                <% }else %>
             </div>
         </div>
 
@@ -67,8 +72,8 @@
     <div class="create-message">
         <h1 class="message-page-title">Send a New Message</h1>
         <div class="message-form">
-            <form action="MessagesServlet" method="post">
-                <input type="hidden" name="senderId" value="<%= senderID%>">
+            <form action="MessagesServlet" method="post" onsubmit="return youCannotMessageYourself()">
+                <input type="hidden" name="senderId" id="senderId" value="<%= senderID%>">
                 <label for="receiverId">Receiver ID:</label>
                 <input type="number" id="receiverId" name="receiverId" required><br><br>
                 <label for="title">Title:</label>
@@ -91,6 +96,19 @@
         } else {
             messageContent.style.display = "none";
         }
+    }
+
+    function youCannotMessageYourself(){
+        let receiverIdEl = document.getElementById("receiverId")
+        let senderIdEl = document.getElementById("senderId")
+
+        let receiverId = parseInt(receiverIdEl.value)
+        let senderId = parseInt(senderIdEl.value)
+        if(parseInt(receiverId) === parseInt(senderId)){
+            alert("You cannot message yourself")
+            return false;
+        }
+        return true;
     }
 </script>
 

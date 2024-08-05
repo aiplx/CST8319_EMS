@@ -13,6 +13,7 @@ public class Message {
     private String messageContent;
     private java.sql.Timestamp timestamp;
     private String senderName;
+    private String recieverName;
     private Boolean isRead;
 
     public String getFormattedTime() {
@@ -91,5 +92,13 @@ public class Message {
 
     public void setMessageId(long messageId) {
         this.messageId = messageId;
+    }
+
+    public String getRecieverName() {
+        return recieverName;
+    }
+
+    public void setRecieverName(String recieverName) {
+        this.recieverName = recieverName;
     }
 }
