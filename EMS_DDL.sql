@@ -20,6 +20,8 @@ CREATE TABLE IF NOT EXISTS `employee` (
                                           `last_name` VARCHAR(45) NOT NULL,
                                           `city` VARCHAR(45) NOT NULL,
                                           `province` VARCHAR(45) NOT NULL,
+                                          `phone_number` VARCHAR(45) NOT NULL, /* added email field by Mohamed 2024-07-29*/
+                                          `email` VARCHAR(45) NOT NULL,/* added phone number field by Mohamed 2024-07-29*/
                                           `password` VARCHAR(45) NOT NULL, /* added password field by Ping 2024-07-28*/
                                           `username` VARCHAR(45) NOT NULL, /* added password field by Ping 2024-07-28*/
                                           PRIMARY KEY (`employee_id`),
@@ -113,7 +115,9 @@ CREATE TABLE IF NOT EXISTS `message` (
                                          `message_id` INT NOT NULL AUTO_INCREMENT,
                                          `sender_id` INT NOT NULL,
                                          `receiver_id` INT,
+                                         `title` VARCHAR(200) NOT NULL, /* Added title field for messages - Mohamed 7/29/24*/
                                          `message_content` TEXT NOT NULL,
+                                         `is_read` BOOLEAN DEFAULT FALSE, /* Added boolean is_read field for messages - Mohamed 07/29/2024 */
                                          `timestamp` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
                                          PRIMARY KEY (`message_id`),
                                          FOREIGN KEY (`sender_id`) REFERENCES `employee`(`employee_id`),

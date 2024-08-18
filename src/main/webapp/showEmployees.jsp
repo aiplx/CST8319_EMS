@@ -33,6 +33,8 @@
             <th>Last Name</th>
             <th>City</th>
             <th>Province</th>
+            <th>Email</th>
+            <th>Phone</th>
             <th>Username</th>
             <th>Role ID</th>
             <th>Actions</th>
@@ -47,6 +49,8 @@
             <td><%= employee.getLastName() %></td>
             <td><%= employee.getCity() %></td>
             <td><%= employee.getProvince() %></td>
+            <td><%= employee.getEmail() %></td>
+            <td><%= employee.getPhone() %></td>
             <td><%= employee.getUsername() %></td>
             <td><%= employee.getRoleId() %></td>
             <td>

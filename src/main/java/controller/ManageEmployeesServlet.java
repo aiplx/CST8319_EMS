@@ -78,6 +78,8 @@ public class ManageEmployeesServlet extends HttpServlet {
                     employee.setProvince(request.getParameter("province"));
                     employee.setUsername(request.getParameter("username"));
                     employee.setPassword(request.getParameter("password"));
+                    employee.setEmail(request.getParameter("email"));
+                    employee.setPhone(request.getParameter("phone"));
                     employeeDAO.updateEmployee(employee);
                     response.sendRedirect("manageEmployees?action=show");
                 }
@@ -89,8 +91,11 @@ public class ManageEmployeesServlet extends HttpServlet {
                     employee.setCity(request.getParameter("city"));
                     employee.setProvince(request.getParameter("province"));
                     employee.setUsername(request.getParameter("username"));
-                    employee.setPassword(request.getParameter("password"));
+                    employee.setPassword(request.getParameter("password"));  // Consider hashing before storing
+                    employee.setEmail(request.getParameter("email"));
+                    employee.setPhone(request.getParameter("phone"));
                     employeeDAO.addEmployee(employee);
+                    logger.info("New employee added with username: {}", employee.getUsername());
                     response.sendRedirect("manageEmployees?action=show");
                 }
                 case "delete" -> {
@@ -104,7 +109,7 @@ public class ManageEmployeesServlet extends HttpServlet {
             }
         } catch (Exception e) {
             logger.error("Error processing request", e);
-            response.sendRedirect("error.jsp");  // Redirect to an error page if something goes wrong
+            response.sendRedirect("mainpage.jsp");
         }
     }
 }

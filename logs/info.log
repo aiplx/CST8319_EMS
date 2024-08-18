@@ -1109,3 +1109,426 @@ java.lang.NumberFormatException: Cannot parse null string
 2024-08-18 00:24:33 | Level: INFO  | Thread: http-bio-8080-exec-9 | Source: ManageEmployeesServlet.doPost | Message: Employee with ID 14 deleted successfully.
 2024-08-18 00:24:33 | Level: INFO  | Thread: http-bio-8080-exec-3 | Source: DatabaseUtil.getConnection | Message: Database connection established
 2024-08-18 00:24:33 | Level: INFO  | Thread: http-bio-8080-exec-3 | Source: EmployeeDAOImpl.getAllEmployees | Message: Employee added to list: dto.EmployeeDTO@4f7ffff0
+2024-08-18 00:44:13 | Level: INFO  | Thread: http-bio-8080-exec-5 | Source: DatabaseUtil.<init> | Message: Database connection established
+2024-08-18 00:44:13 | Level: WARN  | Thread: http-bio-8080-exec-5 | Source: LoginServlet.doPost | Message: Invalid login attempt: ping
+2024-08-18 00:44:15 | Level: INFO  | Thread: http-bio-8080-exec-7 | Source: DatabaseUtil.getConnection | Message: Database connection established
+2024-08-18 00:44:15 | Level: WARN  | Thread: http-bio-8080-exec-7 | Source: LoginServlet.doPost | Message: Invalid login attempt: ping
+2024-08-18 00:44:18 | Level: INFO  | Thread: http-bio-8080-exec-9 | Source: DatabaseUtil.getConnection | Message: Database connection established
+2024-08-18 00:44:18 | Level: WARN  | Thread: http-bio-8080-exec-9 | Source: LoginServlet.doPost | Message: Invalid login attempt: p
+2024-08-18 00:44:25 | Level: INFO  | Thread: http-bio-8080-exec-9 | Source: DatabaseUtil.getConnection | Message: Database connection established
+2024-08-18 00:44:25 | Level: ERROR | Thread: http-bio-8080-exec-9 | Source: EmployeeDAOImpl.getEmployeeByUsernameAndPassword | Message: Error retrieving employee by username and password
+java.sql.SQLException: Column 'phone_number' not found.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:130) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:98) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:90) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:64) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.result.ResultSetImpl.findColumn(ResultSetImpl.java:584) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.result.ResultSetImpl.getString(ResultSetImpl.java:896) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at dao.EmployeeDAOImpl.getEmployeeByUsernameAndPassword(EmployeeDAOImpl.java:200) ~[classes/:?]
+	at controller.LoginServlet.doPost(LoginServlet.java:33) ~[classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:647) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:728) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:222) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:123) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:502) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:171) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:100) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:953) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:408) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1041) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:603) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:312) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[?:?]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[?:?]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+2024-08-18 00:44:25 | Level: INFO  | Thread: http-bio-8080-exec-9 | Source: LoginServlet.doPost | Message: Employee logged in: ping
+2024-08-18 00:44:28 | Level: INFO  | Thread: http-bio-8080-exec-10 | Source: DatabaseUtil.getConnection | Message: Database connection established
+2024-08-18 00:44:28 | Level: ERROR | Thread: http-bio-8080-exec-10 | Source: EmployeeDAOImpl.getAllEmployees | Message: Error retrieving all employees
+java.sql.SQLException: Column 'phone_numwber' not found.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:130) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:98) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:90) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:64) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.result.ResultSetImpl.findColumn(ResultSetImpl.java:584) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.result.ResultSetImpl.getString(ResultSetImpl.java:896) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at dao.EmployeeDAOImpl.getAllEmployees(EmployeeDAOImpl.java:170) ~[classes/:?]
+	at controller.ManageEmployeesServlet.doGet(ManageEmployeesServlet.java:30) ~[classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:621) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:728) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:222) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:123) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:502) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:171) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:100) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:953) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:408) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1041) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:603) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:312) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[?:?]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[?:?]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+2024-08-18 00:46:26 | Level: INFO  | Thread: http-bio-8080-exec-8 | Source: DatabaseUtil.getConnection | Message: Database connection established
+2024-08-18 00:46:42 | Level: INFO  | Thread: http-bio-8080-exec-4 | Source: DatabaseUtil.<init> | Message: Database connection established
+2024-08-18 00:46:42 | Level: WARN  | Thread: http-bio-8080-exec-4 | Source: LoginServlet.doPost | Message: Invalid login attempt: ping
+2024-08-18 00:47:00 | Level: INFO  | Thread: http-bio-8080-exec-8 | Source: DatabaseUtil.getConnection | Message: Database connection established
+2024-08-18 00:47:00 | Level: ERROR | Thread: http-bio-8080-exec-8 | Source: EmployeeDAOImpl.addEmployee | Message: Error adding employee
+java.sql.SQLIntegrityConstraintViolationException: Column 'phone_number' cannot be null
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:118) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:916) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1061) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1009) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1320) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:994) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at dao.EmployeeDAOImpl.addEmployee(EmployeeDAOImpl.java:32) ~[classes/:?]
+	at controller.RegistrationServlet.doPost(RegistrationServlet.java:46) ~[classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:647) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:728) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:222) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:123) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:502) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:171) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:100) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:953) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:408) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1041) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:603) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:312) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[?:?]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[?:?]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+2024-08-18 00:47:00 | Level: INFO  | Thread: http-bio-8080-exec-8 | Source: RegistrationServlet.doPost | Message: Employee registered: ping
+2024-08-18 00:47:04 | Level: INFO  | Thread: http-bio-8080-exec-10 | Source: DatabaseUtil.getConnection | Message: Database connection established
+2024-08-18 00:47:04 | Level: WARN  | Thread: http-bio-8080-exec-10 | Source: LoginServlet.doPost | Message: Invalid login attempt: ping
+2024-08-18 00:47:07 | Level: INFO  | Thread: http-bio-8080-exec-10 | Source: DatabaseUtil.getConnection | Message: Database connection established
+2024-08-18 00:47:07 | Level: WARN  | Thread: http-bio-8080-exec-10 | Source: LoginServlet.doPost | Message: Invalid login attempt: ping
+2024-08-18 00:50:47 | Level: INFO  | Thread: http-bio-8080-exec-1 | Source: DatabaseUtil.getConnection | Message: Database connection established
+2024-08-18 00:50:47 | Level: ERROR | Thread: http-bio-8080-exec-1 | Source: EmployeeDAOImpl.addEmployee | Message: Error adding employee
+java.sql.SQLIntegrityConstraintViolationException: Column 'phone_number' cannot be null
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:118) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:916) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1061) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1009) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1320) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:994) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at dao.EmployeeDAOImpl.addEmployee(EmployeeDAOImpl.java:32) ~[classes/:?]
+	at controller.RegistrationServlet.doPost(RegistrationServlet.java:46) ~[classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:647) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:728) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:222) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:123) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:502) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:171) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:100) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:953) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:408) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1041) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:603) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:312) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[?:?]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[?:?]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+2024-08-18 00:50:47 | Level: INFO  | Thread: http-bio-8080-exec-1 | Source: RegistrationServlet.doPost | Message: Employee registered: ping
+2024-08-18 00:50:51 | Level: INFO  | Thread: http-bio-8080-exec-1 | Source: DatabaseUtil.getConnection | Message: Database connection established
+2024-08-18 00:50:51 | Level: WARN  | Thread: http-bio-8080-exec-1 | Source: LoginServlet.doPost | Message: Invalid login attempt: ping
+2024-08-18 00:51:02 | Level: INFO  | Thread: http-bio-8080-exec-1 | Source: DatabaseUtil.getConnection | Message: Database connection established
+2024-08-18 00:51:02 | Level: WARN  | Thread: http-bio-8080-exec-1 | Source: LoginServlet.doPost | Message: Invalid login attempt: ping
+2024-08-18 00:58:32 | Level: INFO  | Thread: http-bio-8080-exec-1 | Source: DatabaseUtil.<init> | Message: Database connection established
+2024-08-18 00:58:32 | Level: WARN  | Thread: http-bio-8080-exec-1 | Source: LoginServlet.doPost | Message: Invalid login attempt: ping
+2024-08-18 00:58:52 | Level: INFO  | Thread: http-bio-8080-exec-5 | Source: DatabaseUtil.getConnection | Message: Database connection established
+2024-08-18 00:58:52 | Level: INFO  | Thread: http-bio-8080-exec-5 | Source: EmployeeDAOImpl.addEmployee | Message: Employee added: dto.EmployeeDTO@49c0ea08
+2024-08-18 00:58:52 | Level: INFO  | Thread: http-bio-8080-exec-5 | Source: RegistrationServlet.doPost | Message: Employee registered: pi
+2024-08-18 00:58:57 | Level: INFO  | Thread: http-bio-8080-exec-8 | Source: DatabaseUtil.getConnection | Message: Database connection established
+2024-08-18 00:58:57 | Level: INFO  | Thread: http-bio-8080-exec-8 | Source: EmployeeDAOImpl.getEmployeeByUsernameAndPassword | Message: Employee retrieved: dto.EmployeeDTO@1b0ac802
+2024-08-18 00:58:57 | Level: INFO  | Thread: http-bio-8080-exec-8 | Source: LoginServlet.doPost | Message: Employee logged in: pi
+2024-08-18 00:59:00 | Level: INFO  | Thread: http-bio-8080-exec-10 | Source: DatabaseUtil.getConnection | Message: Database connection established
+2024-08-18 00:59:00 | Level: INFO  | Thread: http-bio-8080-exec-10 | Source: EmployeeDAOImpl.getAllEmployees | Message: Employee added to list: dto.EmployeeDTO@afabd2a
+2024-08-18 00:59:09 | Level: INFO  | Thread: http-bio-8080-exec-3 | Source: DatabaseUtil.getConnection | Message: Database connection established
+2024-08-18 00:59:09 | Level: INFO  | Thread: http-bio-8080-exec-3 | Source: EmployeeDAOImpl.getEmployeeById | Message: Employee retrieved: dto.EmployeeDTO@6fe48d24
+2024-08-18 00:59:17 | Level: INFO  | Thread: http-bio-8080-exec-3 | Source: DatabaseUtil.getConnection | Message: Database connection established
+2024-08-18 00:59:17 | Level: ERROR | Thread: http-bio-8080-exec-3 | Source: EmployeeDAOImpl.updateEmployee | Message: Error updating employee
+java.sql.SQLIntegrityConstraintViolationException: Column 'phone_number' cannot be null
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:118) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:916) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1061) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1009) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1320) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:994) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at dao.EmployeeDAOImpl.updateEmployee(EmployeeDAOImpl.java:54) ~[classes/:?]
+	at controller.ManageEmployeesServlet.doPost(ManageEmployeesServlet.java:81) ~[classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:647) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:728) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:222) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:123) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:502) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:171) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:100) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:953) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:408) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1041) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:603) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:312) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[?:?]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[?:?]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+2024-08-18 00:59:17 | Level: INFO  | Thread: http-bio-8080-exec-9 | Source: DatabaseUtil.getConnection | Message: Database connection established
+2024-08-18 00:59:17 | Level: INFO  | Thread: http-bio-8080-exec-9 | Source: EmployeeDAOImpl.getAllEmployees | Message: Employee added to list: dto.EmployeeDTO@36a1f373
+2024-08-18 00:59:19 | Level: INFO  | Thread: http-bio-8080-exec-9 | Source: DatabaseUtil.getConnection | Message: Database connection established
+2024-08-18 00:59:19 | Level: INFO  | Thread: http-bio-8080-exec-9 | Source: EmployeeDAOImpl.getAllEmployees | Message: Employee added to list: dto.EmployeeDTO@6f0d40c5
+2024-08-18 00:59:24 | Level: INFO  | Thread: http-bio-8080-exec-9 | Source: DatabaseUtil.getConnection | Message: Database connection established
+2024-08-18 00:59:24 | Level: INFO  | Thread: http-bio-8080-exec-9 | Source: EmployeeDAOImpl.getEmployeeById | Message: Employee retrieved: dto.EmployeeDTO@718746c7
+2024-08-18 01:06:39 | Level: INFO  | Thread: http-bio-8080-exec-2 | Source: DatabaseUtil.getConnection | Message: Database connection established
+2024-08-18 01:06:39 | Level: INFO  | Thread: http-bio-8080-exec-2 | Source: EmployeeDAOImpl.getEmployeeById | Message: Employee retrieved: dto.EmployeeDTO@7c494c26
+2024-08-18 01:06:51 | Level: INFO  | Thread: http-bio-8080-exec-2 | Source: DatabaseUtil.getConnection | Message: Database connection established
+2024-08-18 01:06:51 | Level: ERROR | Thread: http-bio-8080-exec-2 | Source: EmployeeDAOImpl.updateEmployee | Message: Error updating employee
+java.sql.SQLIntegrityConstraintViolationException: Column 'phone_number' cannot be null
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:118) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:916) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1061) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1009) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1320) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:994) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at dao.EmployeeDAOImpl.updateEmployee(EmployeeDAOImpl.java:54) ~[classes/:?]
+	at controller.ManageEmployeesServlet.doPost(ManageEmployeesServlet.java:81) ~[classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:647) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:728) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:222) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:123) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:502) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:171) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:100) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:953) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:408) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1041) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:603) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:312) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[?:?]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[?:?]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+2024-08-18 01:06:51 | Level: INFO  | Thread: http-bio-8080-exec-2 | Source: DatabaseUtil.getConnection | Message: Database connection established
+2024-08-18 01:06:51 | Level: INFO  | Thread: http-bio-8080-exec-2 | Source: EmployeeDAOImpl.getAllEmployees | Message: Employee added to list: dto.EmployeeDTO@7149a1e6
+2024-08-18 01:06:56 | Level: INFO  | Thread: http-bio-8080-exec-2 | Source: DatabaseUtil.getConnection | Message: Database connection established
+2024-08-18 01:06:56 | Level: INFO  | Thread: http-bio-8080-exec-2 | Source: EmployeeDAOImpl.getAllEmployees | Message: Employee added to list: dto.EmployeeDTO@1ac7c15
+2024-08-18 01:06:59 | Level: INFO  | Thread: http-bio-8080-exec-2 | Source: DatabaseUtil.getConnection | Message: Database connection established
+2024-08-18 01:06:59 | Level: INFO  | Thread: http-bio-8080-exec-2 | Source: EmployeeDAOImpl.getEmployeeById | Message: Employee retrieved: dto.EmployeeDTO@7a949784
+2024-08-18 01:09:53 | Level: INFO  | Thread: http-bio-8080-exec-6 | Source: DatabaseUtil.getConnection | Message: Database connection established
+2024-08-18 01:09:53 | Level: ERROR | Thread: http-bio-8080-exec-6 | Source: EmployeeDAOImpl.addEmployee | Message: Error adding employee
+java.sql.SQLIntegrityConstraintViolationException: Column 'phone_number' cannot be null
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:118) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:916) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1061) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1009) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1320) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:994) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at dao.EmployeeDAOImpl.addEmployee(EmployeeDAOImpl.java:32) ~[classes/:?]
+	at controller.ManageEmployeesServlet.doPost(ManageEmployeesServlet.java:93) ~[classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:647) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:728) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:222) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:123) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:502) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:171) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:100) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:953) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:408) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1041) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:603) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:312) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[?:?]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[?:?]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+2024-08-18 01:09:53 | Level: INFO  | Thread: http-bio-8080-exec-5 | Source: DatabaseUtil.getConnection | Message: Database connection established
+2024-08-18 01:09:53 | Level: INFO  | Thread: http-bio-8080-exec-5 | Source: EmployeeDAOImpl.getAllEmployees | Message: Employee added to list: dto.EmployeeDTO@75b6ca0
+2024-08-18 01:09:56 | Level: INFO  | Thread: http-bio-8080-exec-6 | Source: DatabaseUtil.getConnection | Message: Database connection established
+2024-08-18 01:09:56 | Level: INFO  | Thread: http-bio-8080-exec-6 | Source: EmployeeDAOImpl.getAllEmployees | Message: Employee added to list: dto.EmployeeDTO@9f5a9fc
+2024-08-18 01:11:06 | Level: INFO  | Thread: http-bio-8080-exec-7 | Source: DatabaseUtil.getConnection | Message: Database connection established
+2024-08-18 01:11:06 | Level: INFO  | Thread: http-bio-8080-exec-7 | Source: EmployeeDAOImpl.getEmployeeById | Message: Employee retrieved: dto.EmployeeDTO@5c47cdef
+2024-08-18 01:11:15 | Level: INFO  | Thread: http-bio-8080-exec-7 | Source: DatabaseUtil.getConnection | Message: Database connection established
+2024-08-18 01:11:15 | Level: ERROR | Thread: http-bio-8080-exec-7 | Source: EmployeeDAOImpl.updateEmployee | Message: Error updating employee
+java.sql.SQLIntegrityConstraintViolationException: Column 'phone_number' cannot be null
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:118) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:916) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1061) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1009) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1320) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:994) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at dao.EmployeeDAOImpl.updateEmployee(EmployeeDAOImpl.java:54) ~[classes/:?]
+	at controller.ManageEmployeesServlet.doPost(ManageEmployeesServlet.java:81) ~[classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:647) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:728) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:222) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:123) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:502) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:171) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:100) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:953) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:408) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1041) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:603) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:312) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[?:?]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[?:?]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+2024-08-18 01:11:15 | Level: INFO  | Thread: http-bio-8080-exec-3 | Source: DatabaseUtil.getConnection | Message: Database connection established
+2024-08-18 01:11:15 | Level: INFO  | Thread: http-bio-8080-exec-3 | Source: EmployeeDAOImpl.getAllEmployees | Message: Employee added to list: dto.EmployeeDTO@45bd6202
+2024-08-18 01:19:19 | Level: INFO  | Thread: http-bio-8080-exec-5 | Source: DatabaseUtil.getConnection | Message: Database connection established
+2024-08-18 01:19:19 | Level: INFO  | Thread: http-bio-8080-exec-5 | Source: EmployeeDAOImpl.getAllEmployees | Message: Employee added to list: dto.EmployeeDTO@4f2eb774
+2024-08-18 01:19:22 | Level: INFO  | Thread: http-bio-8080-exec-5 | Source: DatabaseUtil.getConnection | Message: Database connection established
+2024-08-18 01:19:22 | Level: INFO  | Thread: http-bio-8080-exec-5 | Source: EmployeeDAOImpl.getEmployeeById | Message: Employee retrieved: dto.EmployeeDTO@26fad6cd
+2024-08-18 01:19:35 | Level: INFO  | Thread: http-bio-8080-exec-5 | Source: DatabaseUtil.getConnection | Message: Database connection established
+2024-08-18 01:19:35 | Level: ERROR | Thread: http-bio-8080-exec-5 | Source: EmployeeDAOImpl.updateEmployee | Message: Error updating employee
+java.sql.SQLIntegrityConstraintViolationException: Column 'phone_number' cannot be null
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:118) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:916) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1061) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1009) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1320) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:994) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at dao.EmployeeDAOImpl.updateEmployee(EmployeeDAOImpl.java:54) ~[classes/:?]
+	at controller.ManageEmployeesServlet.doPost(ManageEmployeesServlet.java:81) ~[classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:647) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:728) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:222) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:123) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:502) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:171) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:100) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:953) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:408) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1041) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:603) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:312) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[?:?]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[?:?]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+2024-08-18 01:19:35 | Level: INFO  | Thread: http-bio-8080-exec-5 | Source: DatabaseUtil.getConnection | Message: Database connection established
+2024-08-18 01:19:35 | Level: INFO  | Thread: http-bio-8080-exec-5 | Source: EmployeeDAOImpl.getAllEmployees | Message: Employee added to list: dto.EmployeeDTO@1fb2fee7
+2024-08-18 01:19:37 | Level: INFO  | Thread: http-bio-8080-exec-5 | Source: DatabaseUtil.getConnection | Message: Database connection established
+2024-08-18 01:19:37 | Level: INFO  | Thread: http-bio-8080-exec-5 | Source: EmployeeDAOImpl.getAllEmployees | Message: Employee added to list: dto.EmployeeDTO@33561604
+2024-08-18 01:21:19 | Level: INFO  | Thread: http-bio-8080-exec-2 | Source: DatabaseUtil.getConnection | Message: Database connection established
+2024-08-18 01:21:19 | Level: ERROR | Thread: http-bio-8080-exec-2 | Source: EmployeeDAOImpl.updateEmployee | Message: Error updating employee
+java.sql.SQLIntegrityConstraintViolationException: Column 'phone_number' cannot be null
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:118) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:916) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1061) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1009) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1320) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:994) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at dao.EmployeeDAOImpl.updateEmployee(EmployeeDAOImpl.java:54) ~[classes/:?]
+	at controller.ManageEmployeesServlet.doPost(ManageEmployeesServlet.java:81) ~[classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:647) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:728) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:222) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:123) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:502) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:171) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:100) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:953) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:408) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1041) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:603) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:310) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[?:?]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[?:?]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+2024-08-18 01:21:19 | Level: INFO  | Thread: http-bio-8080-exec-2 | Source: DatabaseUtil.getConnection | Message: Database connection established
+2024-08-18 01:21:19 | Level: INFO  | Thread: http-bio-8080-exec-2 | Source: EmployeeDAOImpl.getAllEmployees | Message: Employee added to list: dto.EmployeeDTO@2ca8580f
+2024-08-18 01:21:25 | Level: INFO  | Thread: http-bio-8080-exec-6 | Source: DatabaseUtil.getConnection | Message: Database connection established
+2024-08-18 01:21:25 | Level: INFO  | Thread: http-bio-8080-exec-6 | Source: EmployeeDAOImpl.getEmployeeById | Message: Employee retrieved: dto.EmployeeDTO@46932dd8
+2024-08-18 01:23:16 | Level: INFO  | Thread: http-bio-8080-exec-7 | Source: DatabaseUtil.getConnection | Message: Database connection established
+2024-08-18 01:23:16 | Level: INFO  | Thread: http-bio-8080-exec-7 | Source: EmployeeDAOImpl.addEmployee | Message: Employee added: dto.EmployeeDTO@7c3a3856
+2024-08-18 01:23:16 | Level: INFO  | Thread: http-bio-8080-exec-7 | Source: RegistrationServlet.doPost | Message: Employee registered: li
+2024-08-18 01:23:20 | Level: INFO  | Thread: http-bio-8080-exec-7 | Source: DatabaseUtil.getConnection | Message: Database connection established
+2024-08-18 01:23:20 | Level: INFO  | Thread: http-bio-8080-exec-7 | Source: EmployeeDAOImpl.getEmployeeByUsernameAndPassword | Message: Employee retrieved: dto.EmployeeDTO@99570c5
+2024-08-18 01:23:20 | Level: INFO  | Thread: http-bio-8080-exec-7 | Source: LoginServlet.doPost | Message: Employee logged in: li
+2024-08-18 01:23:23 | Level: INFO  | Thread: http-bio-8080-exec-9 | Source: DatabaseUtil.getConnection | Message: Database connection established
+2024-08-18 01:23:23 | Level: INFO  | Thread: http-bio-8080-exec-9 | Source: EmployeeDAOImpl.getAllEmployees | Message: Employee added to list: dto.EmployeeDTO@2c90652a
+2024-08-18 01:23:23 | Level: INFO  | Thread: http-bio-8080-exec-9 | Source: EmployeeDAOImpl.getAllEmployees | Message: Employee added to list: dto.EmployeeDTO@1dd06b0c
+2024-08-18 01:30:46 | Level: INFO  | Thread: http-bio-8080-exec-5 | Source: DatabaseUtil.<init> | Message: Database connection established
+2024-08-18 01:30:46 | Level: INFO  | Thread: http-bio-8080-exec-5 | Source: EmployeeDAOImpl.getEmployeeByUsernameAndPassword | Message: Employee retrieved: dto.EmployeeDTO@1d672cfc
+2024-08-18 01:30:46 | Level: INFO  | Thread: http-bio-8080-exec-5 | Source: LoginServlet.doPost | Message: Employee logged in: li
+2024-08-18 01:30:47 | Level: INFO  | Thread: http-bio-8080-exec-8 | Source: DatabaseUtil.getConnection | Message: Database connection established
+2024-08-18 01:30:47 | Level: INFO  | Thread: http-bio-8080-exec-8 | Source: EmployeeDAOImpl.getAllEmployees | Message: Employee added to list: dto.EmployeeDTO@4938b569
+2024-08-18 01:30:47 | Level: INFO  | Thread: http-bio-8080-exec-8 | Source: EmployeeDAOImpl.getAllEmployees | Message: Employee added to list: dto.EmployeeDTO@4d073896
+2024-08-18 01:30:51 | Level: INFO  | Thread: http-bio-8080-exec-7 | Source: DatabaseUtil.getConnection | Message: Database connection established
+2024-08-18 01:30:51 | Level: INFO  | Thread: http-bio-8080-exec-7 | Source: EmployeeDAOImpl.getEmployeeById | Message: Employee retrieved: dto.EmployeeDTO@22d1b4a6
+2024-08-18 01:31:03 | Level: INFO  | Thread: http-bio-8080-exec-10 | Source: DatabaseUtil.getConnection | Message: Database connection established
+2024-08-18 01:31:03 | Level: INFO  | Thread: http-bio-8080-exec-10 | Source: EmployeeDAOImpl.updateEmployee | Message: Employee updated: dto.EmployeeDTO@6f4d691a
+2024-08-18 01:31:03 | Level: INFO  | Thread: http-bio-8080-exec-7 | Source: DatabaseUtil.getConnection | Message: Database connection established
+2024-08-18 01:31:03 | Level: INFO  | Thread: http-bio-8080-exec-7 | Source: EmployeeDAOImpl.getAllEmployees | Message: Employee added to list: dto.EmployeeDTO@7d28b3cd
+2024-08-18 01:31:03 | Level: INFO  | Thread: http-bio-8080-exec-7 | Source: EmployeeDAOImpl.getAllEmployees | Message: Employee added to list: dto.EmployeeDTO@52f35c4a
+2024-08-18 01:31:14 | Level: INFO  | Thread: http-bio-8080-exec-10 | Source: DatabaseUtil.getConnection | Message: Database connection established
+2024-08-18 01:31:14 | Level: INFO  | Thread: http-bio-8080-exec-10 | Source: EmployeeDAOImpl.deleteEmployee | Message: Employee deleted: 2
+2024-08-18 01:31:14 | Level: INFO  | Thread: http-bio-8080-exec-10 | Source: ManageEmployeesServlet.doPost | Message: Employee with ID 2 deleted successfully.
+2024-08-18 01:31:14 | Level: INFO  | Thread: http-bio-8080-exec-7 | Source: DatabaseUtil.getConnection | Message: Database connection established
+2024-08-18 01:31:14 | Level: INFO  | Thread: http-bio-8080-exec-7 | Source: EmployeeDAOImpl.getAllEmployees | Message: Employee added to list: dto.EmployeeDTO@79662a54
+2024-08-18 01:31:15 | Level: INFO  | Thread: http-bio-8080-exec-10 | Source: DatabaseUtil.getConnection | Message: Database connection established
+2024-08-18 01:31:15 | Level: INFO  | Thread: http-bio-8080-exec-10 | Source: EmployeeDAOImpl.getAllEmployees | Message: Employee added to list: dto.EmployeeDTO@7a51629f

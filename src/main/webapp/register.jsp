@@ -13,8 +13,22 @@
 </head>
 <body>
 <%@ include file="header.jsp"%>
+
 <div class="fieldframe">
     <h2>Register</h2>
+
+    <!-- Display error message if registration fails -->
+    <%
+        String errorMessage = (String) request.getAttribute("error");
+        if (errorMessage != null) {
+    %>
+    <div class="error-message">
+        <p style="color:red;"><%= errorMessage %></p>
+    </div>
+    <%
+        }
+    %>
+
     <form action="RegistrationServlet" method="post">
         <div class="form-group">
             <label for="firstName">First Name:</label>
@@ -23,6 +37,14 @@
         <div class="form-group">
             <label for="lastName">Last Name:</label>
             <input type="text" id="lastName" name="lastName" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required>
         </div>
         <div class="form-group">
             <label for="city">City:</label>
@@ -46,8 +68,10 @@
         </div>
         <input type="submit" value="Register">
     </form>
+
     <p><a href="login.jsp">Already have an account? Login here</a></p>
 </div>
+
 <%@ include file="footer.jsp"%>
 </body>
 </html>
