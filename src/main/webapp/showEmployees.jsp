@@ -16,6 +16,7 @@
 <head>
     <title>Show Employees</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/loginStyle.css">
     <script type="text/javascript">
         function confirmDelete(employeeId) {
             return confirm("Are you sure you want to delete the employee with ID " + employeeId + "?");

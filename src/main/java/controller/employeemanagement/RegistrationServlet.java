@@ -1,7 +1,7 @@
-package controller;
+package controller.employeemanagement;
 
-import dao.EmployeeDAO;
-import dao.EmployeeDAOImpl;
+import dao.employee.EmployeeDAO;
+import dao.employee.EmployeeDAOImpl;
 import dto.EmployeeDTO;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

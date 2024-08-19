@@ -37,10 +37,7 @@
         <li><a href="manageEmployees?action=show">Show Employees</a></li>
         <li><a href="manageEmployees?action=add">Add Employee</a></li>
         <li><a href="manageSchedules.jsp">Manage Schedules</a></li>
-<%--        <li><a href="managePayroll.jsp">Manage Payroll</a></li>--%>
-<%--        <li><a href="viewRequests.jsp">View Employee Requests</a></li>--%>
-<%--        <li><a href="sendMessages.jsp">Send Messages</a></li>--%>
-<%--        <li><a href="viewReports.jsp">View Reports</a></li>--%>
+
     </ul>
     <%
     } else {
@@ -48,8 +45,6 @@
     <h2>Employee Dashboard</h2>
     <ul class="mainpage">
         <li><a href="viewSchedule.jsp">View Schedule</a></li>
-        <li><a href="clockInOut.jsp">Clock In/Out</a></li>
-        <li><a href="viewPayHistory.jsp">View Pay History</a></li>
         <li><a href="sendRequest.jsp">Send Request</a></li>
         <li><a href="sendMessages.jsp">Send Messages</a></li>
     </ul>

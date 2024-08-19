@@ -1,8 +1,8 @@
-package controller;
+package controller.employeemanagement;
 
 
-import dao.ScheduleDAO;
-import dao.ScheduleDAOImpl;
+import dao.schedule.ScheduleDAO;
+import dao.schedule.ScheduleDAOImpl;
 import dto.ScheduleDTO;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

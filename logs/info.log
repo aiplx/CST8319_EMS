@@ -10,8 +10,8 @@ java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child 
 	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1009) ~[mysql-connector-j-8.0.33.jar:8.0.33]
 	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1320) ~[mysql-connector-j-8.0.33.jar:8.0.33]
 	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:994) ~[mysql-connector-j-8.0.33.jar:8.0.33]
-	at dao.EmployeeDAOImpl.addEmployee(EmployeeDAOImpl.java:30) ~[classes/:?]
-	at controller.RegistrationServlet.doPost(RegistrationServlet.java:46) ~[classes/:?]
+	at dao.employee.EmployeeDAOImpl.addEmployee(EmployeeDAOImpl.java:30) ~[classes/:?]
+	at controller.employeemanagement.RegistrationServlet.doPost(RegistrationServlet.java:46) ~[classes/:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:647) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:728) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
@@ -754,7 +754,7 @@ java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child 
 java.lang.NumberFormatException: Cannot parse null string
 	at java.base/java.lang.Integer.parseInt(Integer.java:623) ~[?:?]
 	at java.base/java.lang.Integer.parseInt(Integer.java:777) ~[?:?]
-	at controller.ManageEmployeesServlet.doGet(ManageEmployeesServlet.java:43) ~[classes/:?]
+	at controller.employeemanagement.ManageEmployeesServlet.doGet(ManageEmployeesServlet.java:43) ~[classes/:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:621) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:728) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
@@ -795,7 +795,7 @@ java.lang.NumberFormatException: Cannot parse null string
 java.lang.NumberFormatException: Cannot parse null string
 	at java.base/java.lang.Integer.parseInt(Integer.java:623) ~[?:?]
 	at java.base/java.lang.Integer.parseInt(Integer.java:777) ~[?:?]
-	at controller.ManageEmployeesServlet.doGet(ManageEmployeesServlet.java:43) ~[classes/:?]
+	at controller.employeemanagement.ManageEmployeesServlet.doGet(ManageEmployeesServlet.java:43) ~[classes/:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:621) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:728) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
@@ -833,7 +833,7 @@ java.lang.NumberFormatException: Cannot parse null string
 java.lang.NumberFormatException: Cannot parse null string
 	at java.base/java.lang.Integer.parseInt(Integer.java:623) ~[?:?]
 	at java.base/java.lang.Integer.parseInt(Integer.java:777) ~[?:?]
-	at controller.ManageEmployeesServlet.doGet(ManageEmployeesServlet.java:43) ~[classes/:?]
+	at controller.employeemanagement.ManageEmployeesServlet.doGet(ManageEmployeesServlet.java:43) ~[classes/:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:621) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:728) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
@@ -862,7 +862,7 @@ java.lang.NumberFormatException: Cannot parse null string
 java.lang.NumberFormatException: Cannot parse null string
 	at java.base/java.lang.Integer.parseInt(Integer.java:623) ~[?:?]
 	at java.base/java.lang.Integer.parseInt(Integer.java:777) ~[?:?]
-	at controller.ManageEmployeesServlet.doGet(ManageEmployeesServlet.java:43) ~[classes/:?]
+	at controller.employeemanagement.ManageEmployeesServlet.doGet(ManageEmployeesServlet.java:43) ~[classes/:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:621) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:728) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
@@ -1124,8 +1124,8 @@ java.sql.SQLException: Column 'phone_number' not found.
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:64) ~[mysql-connector-j-8.0.33.jar:8.0.33]
 	at com.mysql.cj.jdbc.result.ResultSetImpl.findColumn(ResultSetImpl.java:584) ~[mysql-connector-j-8.0.33.jar:8.0.33]
 	at com.mysql.cj.jdbc.result.ResultSetImpl.getString(ResultSetImpl.java:896) ~[mysql-connector-j-8.0.33.jar:8.0.33]
-	at dao.EmployeeDAOImpl.getEmployeeByUsernameAndPassword(EmployeeDAOImpl.java:200) ~[classes/:?]
-	at controller.LoginServlet.doPost(LoginServlet.java:33) ~[classes/:?]
+	at dao.employee.EmployeeDAOImpl.getEmployeeByUsernameAndPassword(EmployeeDAOImpl.java:200) ~[classes/:?]
+	at controller.userauthentication.LoginServlet.doPost(LoginServlet.java:33) ~[classes/:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:647) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:728) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
@@ -1157,8 +1157,8 @@ java.sql.SQLException: Column 'phone_numwber' not found.
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:64) ~[mysql-connector-j-8.0.33.jar:8.0.33]
 	at com.mysql.cj.jdbc.result.ResultSetImpl.findColumn(ResultSetImpl.java:584) ~[mysql-connector-j-8.0.33.jar:8.0.33]
 	at com.mysql.cj.jdbc.result.ResultSetImpl.getString(ResultSetImpl.java:896) ~[mysql-connector-j-8.0.33.jar:8.0.33]
-	at dao.EmployeeDAOImpl.getAllEmployees(EmployeeDAOImpl.java:170) ~[classes/:?]
-	at controller.ManageEmployeesServlet.doGet(ManageEmployeesServlet.java:30) ~[classes/:?]
+	at dao.employee.EmployeeDAOImpl.getAllEmployees(EmployeeDAOImpl.java:170) ~[classes/:?]
+	at controller.employeemanagement.ManageEmployeesServlet.doGet(ManageEmployeesServlet.java:30) ~[classes/:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:621) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:728) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
@@ -1193,8 +1193,8 @@ java.sql.SQLIntegrityConstraintViolationException: Column 'phone_number' cannot 
 	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1009) ~[mysql-connector-j-8.0.33.jar:8.0.33]
 	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1320) ~[mysql-connector-j-8.0.33.jar:8.0.33]
 	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:994) ~[mysql-connector-j-8.0.33.jar:8.0.33]
-	at dao.EmployeeDAOImpl.addEmployee(EmployeeDAOImpl.java:32) ~[classes/:?]
-	at controller.RegistrationServlet.doPost(RegistrationServlet.java:46) ~[classes/:?]
+	at dao.employee.EmployeeDAOImpl.addEmployee(EmployeeDAOImpl.java:32) ~[classes/:?]
+	at controller.employeemanagement.RegistrationServlet.doPost(RegistrationServlet.java:46) ~[classes/:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:647) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:728) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
@@ -1231,8 +1231,8 @@ java.sql.SQLIntegrityConstraintViolationException: Column 'phone_number' cannot 
 	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1009) ~[mysql-connector-j-8.0.33.jar:8.0.33]
 	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1320) ~[mysql-connector-j-8.0.33.jar:8.0.33]
 	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:994) ~[mysql-connector-j-8.0.33.jar:8.0.33]
-	at dao.EmployeeDAOImpl.addEmployee(EmployeeDAOImpl.java:32) ~[classes/:?]
-	at controller.RegistrationServlet.doPost(RegistrationServlet.java:46) ~[classes/:?]
+	at dao.employee.EmployeeDAOImpl.addEmployee(EmployeeDAOImpl.java:32) ~[classes/:?]
+	at controller.employeemanagement.RegistrationServlet.doPost(RegistrationServlet.java:46) ~[classes/:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:647) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:728) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
@@ -1281,8 +1281,8 @@ java.sql.SQLIntegrityConstraintViolationException: Column 'phone_number' cannot 
 	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1009) ~[mysql-connector-j-8.0.33.jar:8.0.33]
 	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1320) ~[mysql-connector-j-8.0.33.jar:8.0.33]
 	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:994) ~[mysql-connector-j-8.0.33.jar:8.0.33]
-	at dao.EmployeeDAOImpl.updateEmployee(EmployeeDAOImpl.java:54) ~[classes/:?]
-	at controller.ManageEmployeesServlet.doPost(ManageEmployeesServlet.java:81) ~[classes/:?]
+	at dao.employee.EmployeeDAOImpl.updateEmployee(EmployeeDAOImpl.java:54) ~[classes/:?]
+	at controller.employeemanagement.ManageEmployeesServlet.doPost(ManageEmployeesServlet.java:81) ~[classes/:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:647) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:728) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
@@ -1322,8 +1322,8 @@ java.sql.SQLIntegrityConstraintViolationException: Column 'phone_number' cannot 
 	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1009) ~[mysql-connector-j-8.0.33.jar:8.0.33]
 	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1320) ~[mysql-connector-j-8.0.33.jar:8.0.33]
 	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:994) ~[mysql-connector-j-8.0.33.jar:8.0.33]
-	at dao.EmployeeDAOImpl.updateEmployee(EmployeeDAOImpl.java:54) ~[classes/:?]
-	at controller.ManageEmployeesServlet.doPost(ManageEmployeesServlet.java:81) ~[classes/:?]
+	at dao.employee.EmployeeDAOImpl.updateEmployee(EmployeeDAOImpl.java:54) ~[classes/:?]
+	at controller.employeemanagement.ManageEmployeesServlet.doPost(ManageEmployeesServlet.java:81) ~[classes/:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:647) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:728) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
@@ -1361,8 +1361,8 @@ java.sql.SQLIntegrityConstraintViolationException: Column 'phone_number' cannot 
 	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1009) ~[mysql-connector-j-8.0.33.jar:8.0.33]
 	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1320) ~[mysql-connector-j-8.0.33.jar:8.0.33]
 	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:994) ~[mysql-connector-j-8.0.33.jar:8.0.33]
-	at dao.EmployeeDAOImpl.addEmployee(EmployeeDAOImpl.java:32) ~[classes/:?]
-	at controller.ManageEmployeesServlet.doPost(ManageEmployeesServlet.java:93) ~[classes/:?]
+	at dao.employee.EmployeeDAOImpl.addEmployee(EmployeeDAOImpl.java:32) ~[classes/:?]
+	at controller.employeemanagement.ManageEmployeesServlet.doPost(ManageEmployeesServlet.java:93) ~[classes/:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:647) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:728) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
@@ -1400,8 +1400,8 @@ java.sql.SQLIntegrityConstraintViolationException: Column 'phone_number' cannot 
 	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1009) ~[mysql-connector-j-8.0.33.jar:8.0.33]
 	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1320) ~[mysql-connector-j-8.0.33.jar:8.0.33]
 	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:994) ~[mysql-connector-j-8.0.33.jar:8.0.33]
-	at dao.EmployeeDAOImpl.updateEmployee(EmployeeDAOImpl.java:54) ~[classes/:?]
-	at controller.ManageEmployeesServlet.doPost(ManageEmployeesServlet.java:81) ~[classes/:?]
+	at dao.employee.EmployeeDAOImpl.updateEmployee(EmployeeDAOImpl.java:54) ~[classes/:?]
+	at controller.employeemanagement.ManageEmployeesServlet.doPost(ManageEmployeesServlet.java:81) ~[classes/:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:647) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:728) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
@@ -1439,8 +1439,8 @@ java.sql.SQLIntegrityConstraintViolationException: Column 'phone_number' cannot 
 	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1009) ~[mysql-connector-j-8.0.33.jar:8.0.33]
 	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1320) ~[mysql-connector-j-8.0.33.jar:8.0.33]
 	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:994) ~[mysql-connector-j-8.0.33.jar:8.0.33]
-	at dao.EmployeeDAOImpl.updateEmployee(EmployeeDAOImpl.java:54) ~[classes/:?]
-	at controller.ManageEmployeesServlet.doPost(ManageEmployeesServlet.java:81) ~[classes/:?]
+	at dao.employee.EmployeeDAOImpl.updateEmployee(EmployeeDAOImpl.java:54) ~[classes/:?]
+	at controller.employeemanagement.ManageEmployeesServlet.doPost(ManageEmployeesServlet.java:81) ~[classes/:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:647) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:728) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
@@ -1476,8 +1476,8 @@ java.sql.SQLIntegrityConstraintViolationException: Column 'phone_number' cannot 
 	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1009) ~[mysql-connector-j-8.0.33.jar:8.0.33]
 	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1320) ~[mysql-connector-j-8.0.33.jar:8.0.33]
 	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:994) ~[mysql-connector-j-8.0.33.jar:8.0.33]
-	at dao.EmployeeDAOImpl.updateEmployee(EmployeeDAOImpl.java:54) ~[classes/:?]
-	at controller.ManageEmployeesServlet.doPost(ManageEmployeesServlet.java:81) ~[classes/:?]
+	at dao.employee.EmployeeDAOImpl.updateEmployee(EmployeeDAOImpl.java:54) ~[classes/:?]
+	at controller.employeemanagement.ManageEmployeesServlet.doPost(ManageEmployeesServlet.java:81) ~[classes/:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:647) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:728) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
@@ -1532,3 +1532,82 @@ java.sql.SQLIntegrityConstraintViolationException: Column 'phone_number' cannot 
 2024-08-18 01:31:14 | Level: INFO  | Thread: http-bio-8080-exec-7 | Source: EmployeeDAOImpl.getAllEmployees | Message: Employee added to list: dto.EmployeeDTO@79662a54
 2024-08-18 01:31:15 | Level: INFO  | Thread: http-bio-8080-exec-10 | Source: DatabaseUtil.getConnection | Message: Database connection established
 2024-08-18 01:31:15 | Level: INFO  | Thread: http-bio-8080-exec-10 | Source: EmployeeDAOImpl.getAllEmployees | Message: Employee added to list: dto.EmployeeDTO@7a51629f
+2024-08-18 15:02:26 | Level: INFO  | Thread: http-bio-8080-exec-5 | Source: DatabaseUtil.<init> | Message: Database connection established
+2024-08-18 15:02:26 | Level: WARN  | Thread: http-bio-8080-exec-5 | Source: LoginServlet.doPost | Message: Invalid login attempt: li
+2024-08-18 15:02:28 | Level: INFO  | Thread: http-bio-8080-exec-7 | Source: DatabaseUtil.getConnection | Message: Database connection established
+2024-08-18 15:02:28 | Level: WARN  | Thread: http-bio-8080-exec-7 | Source: LoginServlet.doPost | Message: Invalid login attempt: li
+2024-08-18 15:02:31 | Level: INFO  | Thread: http-bio-8080-exec-9 | Source: DatabaseUtil.getConnection | Message: Database connection established
+2024-08-18 15:02:31 | Level: WARN  | Thread: http-bio-8080-exec-9 | Source: LoginServlet.doPost | Message: Invalid login attempt: ping
+2024-08-18 15:02:36 | Level: INFO  | Thread: http-bio-8080-exec-10 | Source: DatabaseUtil.getConnection | Message: Database connection established
+2024-08-18 15:02:36 | Level: WARN  | Thread: http-bio-8080-exec-10 | Source: LoginServlet.doPost | Message: Invalid login attempt: liang
+2024-08-18 15:03:05 | Level: INFO  | Thread: http-bio-8080-exec-4 | Source: DatabaseUtil.getConnection | Message: Database connection established
+2024-08-18 15:03:05 | Level: INFO  | Thread: http-bio-8080-exec-4 | Source: EmployeeDAOImpl.getEmployeeByUsernameAndPassword | Message: Employee retrieved: dto.EmployeeDTO@6011acdc
+2024-08-18 15:03:05 | Level: INFO  | Thread: http-bio-8080-exec-4 | Source: LoginServlet.doPost | Message: Employee logged in: pi
+2024-08-18 15:03:07 | Level: INFO  | Thread: http-bio-8080-exec-4 | Source: DatabaseUtil.getConnection | Message: Database connection established
+2024-08-18 15:03:07 | Level: INFO  | Thread: http-bio-8080-exec-4 | Source: EmployeeDAOImpl.getAllEmployees | Message: Employee added to list: dto.EmployeeDTO@2b1e286d
+2024-08-18 15:04:00 | Level: INFO  | Thread: http-bio-8080-exec-1 | Source: DatabaseUtil.getConnection | Message: Database connection established
+2024-08-18 15:04:00 | Level: INFO  | Thread: http-bio-8080-exec-1 | Source: EmployeeDAOImpl.getAllEmployees | Message: Employee added to list: dto.EmployeeDTO@4573bcc8
+2024-08-18 15:04:18 | Level: INFO  | Thread: http-bio-8080-exec-1 | Source: DatabaseUtil.getConnection | Message: Database connection established
+2024-08-18 15:04:18 | Level: INFO  | Thread: http-bio-8080-exec-1 | Source: EmployeeDAOImpl.getAllEmployees | Message: Employee added to list: dto.EmployeeDTO@7881bcc8
+2024-08-18 15:05:10 | Level: INFO  | Thread: http-bio-8080-exec-6 | Source: DatabaseUtil.getConnection | Message: Database connection established
+2024-08-18 15:05:10 | Level: INFO  | Thread: http-bio-8080-exec-6 | Source: EmployeeDAOImpl.getAllEmployees | Message: Employee added to list: dto.EmployeeDTO@55d7cd01
+2024-08-18 15:06:10 | Level: INFO  | Thread: http-bio-8080-exec-9 | Source: DatabaseUtil.getConnection | Message: Database connection established
+2024-08-18 15:06:10 | Level: INFO  | Thread: http-bio-8080-exec-9 | Source: EmployeeDAOImpl.getAllEmployees | Message: Employee added to list: dto.EmployeeDTO@3d26d278
+2024-08-18 15:06:26 | Level: INFO  | Thread: http-bio-8080-exec-3 | Source: DatabaseUtil.getConnection | Message: Database connection established
+2024-08-18 15:06:26 | Level: INFO  | Thread: http-bio-8080-exec-3 | Source: EmployeeDAOImpl.getAllEmployees | Message: Employee added to list: dto.EmployeeDTO@48e1b435
+2024-08-18 15:12:39 | Level: INFO  | Thread: http-bio-8080-exec-6 | Source: DatabaseUtil.getConnection | Message: Database connection established
+2024-08-18 15:12:39 | Level: INFO  | Thread: http-bio-8080-exec-6 | Source: EmployeeDAOImpl.getAllEmployees | Message: Employee added to list: dto.EmployeeDTO@1718c929
+2024-08-18 15:13:06 | Level: INFO  | Thread: http-bio-8080-exec-5 | Source: DatabaseUtil.getConnection | Message: Database connection established
+2024-08-18 15:13:06 | Level: INFO  | Thread: http-bio-8080-exec-5 | Source: EmployeeDAOImpl.getAllEmployees | Message: Employee added to list: dto.EmployeeDTO@240a612e
+2024-08-18 15:13:31 | Level: INFO  | Thread: http-bio-8080-exec-5 | Source: DatabaseUtil.getConnection | Message: Database connection established
+2024-08-18 15:13:31 | Level: INFO  | Thread: http-bio-8080-exec-5 | Source: EmployeeDAOImpl.getAllEmployees | Message: Employee added to list: dto.EmployeeDTO@4571256e
+2024-08-18 15:13:34 | Level: INFO  | Thread: http-bio-8080-exec-6 | Source: DatabaseUtil.getConnection | Message: Database connection established
+2024-08-18 15:13:34 | Level: INFO  | Thread: http-bio-8080-exec-6 | Source: EmployeeDAOImpl.getAllEmployees | Message: Employee added to list: dto.EmployeeDTO@2dadfacb
+2024-08-18 15:13:51 | Level: INFO  | Thread: http-bio-8080-exec-5 | Source: DatabaseUtil.getConnection | Message: Database connection established
+2024-08-18 15:13:51 | Level: INFO  | Thread: http-bio-8080-exec-5 | Source: EmployeeDAOImpl.getAllEmployees | Message: Employee added to list: dto.EmployeeDTO@646c6a57
+2024-08-18 15:15:01 | Level: INFO  | Thread: http-bio-8080-exec-1 | Source: DatabaseUtil.getConnection | Message: Database connection established
+2024-08-18 15:15:01 | Level: INFO  | Thread: http-bio-8080-exec-1 | Source: EmployeeDAOImpl.getAllEmployees | Message: Employee added to list: dto.EmployeeDTO@76b2c81f
+2024-08-18 17:25:10 | Level: INFO  | Thread: http-bio-8080-exec-9 | Source: DatabaseUtil.getConnection | Message: Database connection established
+2024-08-18 17:25:10 | Level: INFO  | Thread: http-bio-8080-exec-9 | Source: EmployeeDAOImpl.getEmployeeByUsernameAndPassword | Message: Employee retrieved: dto.EmployeeDTO@5bf859eb
+2024-08-18 17:25:10 | Level: INFO  | Thread: http-bio-8080-exec-9 | Source: LoginServlet.doPost | Message: Employee logged in: pi
+2024-08-18 20:46:37 | Level: INFO  | Thread: http-bio-8080-exec-8 | Source: DatabaseUtil.getConnection | Message: Database connection established
+2024-08-18 20:46:37 | Level: INFO  | Thread: http-bio-8080-exec-8 | Source: EmployeeDAOImpl.getEmployeeByUsernameAndPassword | Message: Employee retrieved: dto.EmployeeDTO@124d85c7
+2024-08-18 20:46:37 | Level: INFO  | Thread: http-bio-8080-exec-8 | Source: LoginServlet.doPost | Message: Employee logged in: pi
+2024-08-18 20:46:40 | Level: INFO  | Thread: http-bio-8080-exec-8 | Source: DatabaseUtil.getConnection | Message: Database connection established
+2024-08-18 20:46:40 | Level: INFO  | Thread: http-bio-8080-exec-8 | Source: EmployeeDAOImpl.getAllEmployees | Message: Employee added to list: dto.EmployeeDTO@66d2eeaf
+2024-08-18 20:47:02 | Level: INFO  | Thread: http-bio-8080-exec-8 | Source: DatabaseUtil.getConnection | Message: Database connection established
+2024-08-18 20:47:02 | Level: INFO  | Thread: http-bio-8080-exec-8 | Source: EmployeeDAOImpl.getAllEmployees | Message: Employee added to list: dto.EmployeeDTO@1353f22e
+2024-08-18 20:47:07 | Level: INFO  | Thread: http-bio-8080-exec-8 | Source: DatabaseUtil.getConnection | Message: Database connection established
+2024-08-18 20:47:07 | Level: INFO  | Thread: http-bio-8080-exec-8 | Source: EmployeeDAOImpl.getAllEmployees | Message: Employee added to list: dto.EmployeeDTO@332ebd74
+2024-08-18 20:47:12 | Level: INFO  | Thread: http-bio-8080-exec-2 | Source: DatabaseUtil.getConnection | Message: Database connection established
+2024-08-18 20:47:12 | Level: INFO  | Thread: http-bio-8080-exec-2 | Source: EmployeeDAOImpl.getEmployeeById | Message: Employee retrieved: dto.EmployeeDTO@75622070
+2024-08-18 20:48:53 | Level: INFO  | Thread: http-bio-8080-exec-5 | Source: DatabaseUtil.getConnection | Message: Database connection established
+2024-08-18 20:48:53 | Level: INFO  | Thread: http-bio-8080-exec-5 | Source: EmployeeDAOImpl.updateEmployee | Message: Employee updated: dto.EmployeeDTO@700bad47
+2024-08-18 20:48:53 | Level: INFO  | Thread: http-bio-8080-exec-5 | Source: DatabaseUtil.getConnection | Message: Database connection established
+2024-08-18 20:48:53 | Level: INFO  | Thread: http-bio-8080-exec-5 | Source: EmployeeDAOImpl.getAllEmployees | Message: Employee added to list: dto.EmployeeDTO@77c9d927
+2024-08-18 20:48:59 | Level: INFO  | Thread: http-bio-8080-exec-5 | Source: DatabaseUtil.getConnection | Message: Database connection established
+2024-08-18 20:48:59 | Level: INFO  | Thread: http-bio-8080-exec-5 | Source: EmployeeDAOImpl.getAllEmployees | Message: Employee added to list: dto.EmployeeDTO@36a785fc
+2024-08-18 20:49:03 | Level: INFO  | Thread: http-bio-8080-exec-5 | Source: DatabaseUtil.getConnection | Message: Database connection established
+2024-08-18 20:49:03 | Level: INFO  | Thread: http-bio-8080-exec-5 | Source: EmployeeDAOImpl.getAllEmployees | Message: Employee added to list: dto.EmployeeDTO@7ddd37ca
+2024-08-18 20:51:39 | Level: INFO  | Thread: http-bio-8080-exec-4 | Source: LogoutServlet.doPost | Message: Employee logged out: pi
+2024-08-18 20:51:43 | Level: INFO  | Thread: http-bio-8080-exec-4 | Source: DatabaseUtil.getConnection | Message: Database connection established
+2024-08-18 20:51:43 | Level: INFO  | Thread: http-bio-8080-exec-4 | Source: EmployeeDAOImpl.getEmployeeByUsernameAndPassword | Message: Employee retrieved: dto.EmployeeDTO@6576323f
+2024-08-18 20:51:43 | Level: INFO  | Thread: http-bio-8080-exec-4 | Source: LoginServlet.doPost | Message: Employee logged in: ping
+2024-08-18 20:51:44 | Level: INFO  | Thread: http-bio-8080-exec-1 | Source: DatabaseUtil.getConnection | Message: Database connection established
+2024-08-18 20:51:44 | Level: INFO  | Thread: http-bio-8080-exec-1 | Source: EmployeeDAOImpl.getAllEmployees | Message: Employee added to list: dto.EmployeeDTO@735a0bee
+2024-08-18 20:55:27 | Level: INFO  | Thread: http-bio-8080-exec-10 | Source: DatabaseUtil.getConnection | Message: Database connection established
+2024-08-18 20:55:27 | Level: INFO  | Thread: http-bio-8080-exec-10 | Source: EmployeeDAOImpl.addEmployee | Message: Employee added: dto.EmployeeDTO@664bf505
+2024-08-18 20:55:27 | Level: INFO  | Thread: http-bio-8080-exec-10 | Source: ManageEmployeesServlet.doPost | Message: New employee added with username: employee
+2024-08-18 20:55:27 | Level: INFO  | Thread: http-bio-8080-exec-10 | Source: DatabaseUtil.getConnection | Message: Database connection established
+2024-08-18 20:55:27 | Level: INFO  | Thread: http-bio-8080-exec-10 | Source: EmployeeDAOImpl.getAllEmployees | Message: Employee added to list: dto.EmployeeDTO@5bdfca44
+2024-08-18 20:55:27 | Level: INFO  | Thread: http-bio-8080-exec-10 | Source: EmployeeDAOImpl.getAllEmployees | Message: Employee added to list: dto.EmployeeDTO@6205efe7
+2024-08-18 20:57:43 | Level: INFO  | Thread: http-bio-8080-exec-7 | Source: DatabaseUtil.getConnection | Message: Database connection established
+2024-08-18 20:57:43 | Level: INFO  | Thread: http-bio-8080-exec-7 | Source: EmployeeDAOImpl.getEmployeeByUsernameAndPassword | Message: Employee retrieved: dto.EmployeeDTO@253e897
+2024-08-18 20:57:43 | Level: INFO  | Thread: http-bio-8080-exec-7 | Source: LoginServlet.doPost | Message: Employee logged in: employee
+2024-08-18 21:01:09 | Level: INFO  | Thread: http-bio-8080-exec-6 | Source: LogoutServlet.doPost | Message: Employee logged out: employee
+2024-08-18 21:01:13 | Level: INFO  | Thread: http-bio-8080-exec-6 | Source: DatabaseUtil.getConnection | Message: Database connection established
+2024-08-18 21:01:13 | Level: INFO  | Thread: http-bio-8080-exec-6 | Source: EmployeeDAOImpl.getEmployeeByUsernameAndPassword | Message: Employee retrieved: dto.EmployeeDTO@635f5d6
+2024-08-18 21:01:13 | Level: INFO  | Thread: http-bio-8080-exec-6 | Source: LoginServlet.doPost | Message: Employee logged in: ping
+2024-08-18 21:01:15 | Level: INFO  | Thread: http-bio-8080-exec-9 | Source: DatabaseUtil.getConnection | Message: Database connection established
+2024-08-18 21:01:15 | Level: INFO  | Thread: http-bio-8080-exec-9 | Source: EmployeeDAOImpl.getAllEmployees | Message: Employee added to list: dto.EmployeeDTO@5ed78116
+2024-08-18 21:01:15 | Level: INFO  | Thread: http-bio-8080-exec-9 | Source: EmployeeDAOImpl.getAllEmployees | Message: Employee added to list: dto.EmployeeDTO@1ef5c096

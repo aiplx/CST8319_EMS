@@ -1,4 +1,4 @@
-package dao;
+package dao.employee;
 
 import dto.EmployeeDTO;
 import org.apache.logging.log4j.LogManager;

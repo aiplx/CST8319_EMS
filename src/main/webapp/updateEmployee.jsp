@@ -17,6 +17,7 @@
 <head>
     <title>Update Employee</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/loginStyle.css">
     <style>
         .form-container {
             width: 50%;
