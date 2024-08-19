@@ -1,4 +1,4 @@
-package dao;
+package dao.schedule;
 
 import dto.ScheduleDTO;
 import java.util.List;

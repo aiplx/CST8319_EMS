@@ -5,7 +5,7 @@
 --%>
 
 <div id="navbar">
-    <img src="images/logo.png" alt="Logo" class="navbar-logo">
+    <img src="images/Logo.png" alt="Logo" class="navbar-logo">
     <div class="nav-items">
         <ul>
             <li><a href="mainpage.jsp">Home</a></li>

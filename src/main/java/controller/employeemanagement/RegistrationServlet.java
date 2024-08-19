@@ -1,7 +1,7 @@
-package controller;
+package controller.employeemanagement;
 
-import dao.EmployeeDAO;
-import dao.EmployeeDAOImpl;
+import dao.employee.EmployeeDAO;
+import dao.employee.EmployeeDAOImpl;
 import dto.EmployeeDTO;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -31,7 +31,18 @@ public class RegistrationServlet extends HttpServlet {
         String province = request.getParameter("province");
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-        int roleId = Integer.parseInt(request.getParameter("roleId"));
+        String email = request.getParameter("email");
+        String phone = request.getParameter("phone");
+        int roleId;
+
+        try {
+            roleId = Integer.parseInt(request.getParameter("roleId"));
+        } catch (NumberFormatException e) {
+            logger.error("Invalid role ID format", e);
+            request.setAttribute("error", "Invalid role ID format.");
+            request.getRequestDispatcher("register.jsp").forward(request, response);
+            return;
+        }
 
         EmployeeDTO employee = new EmployeeDTO();
         employee.setFirstName(firstName);
@@ -41,6 +52,8 @@ public class RegistrationServlet extends HttpServlet {
         employee.setUsername(username);
         employee.setPassword(password);
         employee.setRoleId(roleId);
+        employee.setEmail(email);
+        employee.setPhone(phone);
 
         try {
             employeeDAO.addEmployee(employee);
