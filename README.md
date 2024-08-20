@@ -48,6 +48,8 @@ This project is an Employee Management System that allows for the rmanagement of
 2. **Set up the MySQL database:**
    - Create a new MySQL database named 'ems_schema'.
    - Run the provided SQL script to set up the database schema and initial data.
+   - Edit the db.properties file to match your information.
+   - Store the Sendgrid and Twilio API keys, tokens, and other required information in your system variables.
 3. **Configure the database connection:**
    Update the 'DatabaseUtil.java' file with your MySQL database connection details.
 4. **Build the project:**
