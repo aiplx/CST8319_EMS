@@ -4,6 +4,8 @@
 <%@include file="navbar-header.jsp"%>
 <head>
     <title>Employee Request Form</title>
+    <link rel="stylesheet" href="css/my-style.css">
+
 </head>
 <body>
 <h1>Employee Request Form</h1>
