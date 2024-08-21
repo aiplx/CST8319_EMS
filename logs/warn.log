@@ -488,3 +488,4 @@ java.sql.SQLIntegrityConstraintViolationException: Column 'phone_number' cannot 
 2024-08-18 15:02:28 | Level: WARN  | Thread: http-bio-8080-exec-7 | Source: LoginServlet.doPost | Message: Invalid login attempt: li
 2024-08-18 15:02:31 | Level: WARN  | Thread: http-bio-8080-exec-9 | Source: LoginServlet.doPost | Message: Invalid login attempt: ping
 2024-08-18 15:02:36 | Level: WARN  | Thread: http-bio-8080-exec-10 | Source: LoginServlet.doPost | Message: Invalid login attempt: liang
+2024-08-18 22:15:08 | Level: WARN  | Thread: http-bio-8080-exec-10 | Source: ManageEmployeesServlet.doPost | Message: Employee not found for ID: 2

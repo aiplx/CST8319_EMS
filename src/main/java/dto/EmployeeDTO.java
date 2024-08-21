@@ -1,16 +1,17 @@
 package dto;
 
 public class EmployeeDTO {
-    private int employeeId;
-    private int roleId;
-    private String firstName;
-    private String lastName;
-    private String city;
-    private String province;
-    private String username;
-    private String password;
-    private String phone;
-    private String email;
+    // Fields representing the employee's information
+    private int employeeId;    // Unique identifier for the employee
+    private int roleId;        // Role ID associated with the employee's role
+    private String firstName;  // Employee's first name
+    private String lastName;   // Employee's last name
+    private String city;       // City where the employee resides
+    private String province;   // Province where the employee resides
+    private String username;   // Username for the employee's login
+    private String password;   // Password for the employee's login (consider storing a hashed version)
+    private String phone;      // Employee's phone number
+    private String email;      // Employee's email address
 
     // Getters and Setters
     public int getEmployeeId() {

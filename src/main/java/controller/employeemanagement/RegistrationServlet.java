@@ -13,13 +13,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/RegistrationServlet")
+@WebServlet("/RegistrationServlet")  // Servlet annotation to handle requests at /RegistrationServlet
 public class RegistrationServlet extends HttpServlet {
     private EmployeeDAO employeeDAO = new EmployeeDAOImpl();
     private static final Logger logger = LogManager.getLogger(RegistrationServlet.class);
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // Handles GET requests to display the registration form
         request.getRequestDispatcher("register.jsp").forward(request, response);
     }
 
@@ -36,14 +37,17 @@ public class RegistrationServlet extends HttpServlet {
         int roleId;
 
         try {
+            // Attempt to parse the role ID from the request
             roleId = Integer.parseInt(request.getParameter("roleId"));
         } catch (NumberFormatException e) {
+            // Handle exception if the role ID is not a valid integer
             logger.error("Invalid role ID format", e);
             request.setAttribute("error", "Invalid role ID format.");
             request.getRequestDispatcher("register.jsp").forward(request, response);
-            return;
+            return;// Exit the method to prevent further processing
         }
 
+        // Create a new EmployeeDTO object and set its properties based on the form input
         EmployeeDTO employee = new EmployeeDTO();
         employee.setFirstName(firstName);
         employee.setLastName(lastName);
@@ -57,9 +61,11 @@ public class RegistrationServlet extends HttpServlet {
 
         try {
             employeeDAO.addEmployee(employee);
+            // Attempt to add the new employee to the database
             logger.info("Employee registered: {}", employee.getUsername());
             response.sendRedirect("login.jsp");
         } catch (Exception e) {
+            // Handle any exceptions that occur during the registration process
             logger.error("Error during registration: {}", e.getMessage());
             request.setAttribute("error", "Registration failed. Please try again.");
             request.getRequestDispatcher("register.jsp").forward(request, response);

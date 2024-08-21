@@ -17,6 +17,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 
     @Override
     public void addEmployee(EmployeeDTO employee) {
+        // SQL query to insert a new employee into the database
         String sql = "INSERT INTO employee (role_id, first_name, last_name, city, province, username, password, phone_number, email) VALUES (?, ?, ?, ?, ?, ?, ?,?,?)";
         try (Connection conn = DatabaseUtil.getInstance().getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
@@ -32,15 +33,17 @@ public class EmployeeDAOImpl implements EmployeeDAO {
             stmt.executeUpdate();
             logger.info("Employee added: {}", employee);
         } catch (SQLException e) {
-            logger.error("Error adding employee", e);
+            logger.error("Error adding employee", e);// Log any errors that occur during the process
         }
     }
 
     @Override
     public void updateEmployee(EmployeeDTO employee) {
+        // SQL query to update an existing employee in the database
         String sql = "UPDATE employee SET role_id = ?, first_name = ?, last_name = ?, city = ?, province = ?, username = ?, password = ?, phone_number = ?, email = ? WHERE employee_id = ?";
         try (Connection conn = DatabaseUtil.getInstance().getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
+            // Set the parameters for the SQL query
             stmt.setInt(1, employee.getRoleId());
             stmt.setString(2, employee.getFirstName());
             stmt.setString(3, employee.getLastName());
@@ -60,6 +63,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 
     @Override
     public void deleteEmployee(int employeeId) {
+        // SQL query to delete an employee from the database based on their ID
         String sql = "DELETE FROM employee WHERE employee_id = ?";
         try (Connection conn = DatabaseUtil.getInstance().getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
@@ -73,6 +77,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 
     @Override
     public EmployeeDTO getEmployeeById(int employeeId) {
+        // SQL query to retrieve an employee's details based on their ID
         String sql = "SELECT * FROM employee WHERE employee_id = ?";
         EmployeeDTO employee = null;
         try (Connection conn = DatabaseUtil.getInstance().getConnection();
@@ -101,12 +106,14 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 
     @Override
     public String getEmployeeFullNameById(int employeeId) {
+        // SQL query to retrieve the full name of an employee based on their ID
         String query = "SELECT first_name, last_name  FROM employee WHERE employee_id = ?";
         String fullName = "";
         try(Connection conn = DatabaseUtil.getInstance().getConnection(); PreparedStatement stmt = conn.prepareStatement(query)){
             stmt.setInt(1, employeeId);
             ResultSet rs = stmt.executeQuery();
             if (rs.next()) {
+                // Concatenate the first and last names to get the full name
                 fullName = rs.getString("first_name") + " " + rs.getString("last_name");
             }
         }catch(Exception e){
@@ -117,12 +124,14 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 
     @Override
     public String getEmployeePhoneNumber(int employeeId) {
+        // SQL query to retrieve the phone number of an employee based on their ID
         String query = "SELECT * FROM employee WHERE employee_id = ?";
         String phone_number = "";
         try(Connection conn = DatabaseUtil.getInstance().getConnection(); PreparedStatement stmt = conn.prepareStatement(query)){
             stmt.setInt(1,employeeId);
             ResultSet rs = stmt.executeQuery();
             while (rs.next()) {
+                // Retrieve the phone number
                 phone_number = rs.getString("phone_number");
                 logger.info("Phone number retrieved for Employee #" + employeeId + " : {}", phone_number);
             }
@@ -135,6 +144,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 
     @Override
     public String getEmployeeEmail(int employeeId) {
+        // SQL query to retrieve the email of an employee based on their ID
         String query = "SELECT * FROM employee WHERE employee_id = ?";
         String email = "";
         try(Connection conn = DatabaseUtil.getInstance().getConnection(); PreparedStatement stmt = conn.prepareStatement(query)){
@@ -152,11 +162,13 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 
     @Override
     public List<EmployeeDTO> getAllEmployees() {
+        // SQL query to retrieve all employees from the database
         String sql = "SELECT * FROM employee";
         List<EmployeeDTO> employees = new ArrayList<>();
         try (Connection conn = DatabaseUtil.getInstance().getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql);
              ResultSet rs = stmt.executeQuery()) {
+            // Iterate through the result set and populate the list of employees
             while (rs.next()) {
                 EmployeeDTO employee = new EmployeeDTO();
                 employee.setEmployeeId(rs.getInt("employee_id"));
@@ -180,6 +192,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 
     @Override
     public EmployeeDTO getEmployeeByUsernameAndPassword(String username, String password) {
+        // SQL query to retrieve an employee based on their username and password
         String sql = "SELECT * FROM employee WHERE username = ? AND password = ?";
         EmployeeDTO employee = null;
         try (Connection conn = DatabaseUtil.getInstance().getConnection();
@@ -188,6 +201,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
             stmt.setString(2, password);
             ResultSet rs = stmt.executeQuery();
             if (rs.next()) {
+                // Populate the EmployeeDTO object with the retrieved data
                 employee = new EmployeeDTO();
                 employee.setEmployeeId(rs.getInt("employee_id"));
                 employee.setRoleId(rs.getInt("role_id"));

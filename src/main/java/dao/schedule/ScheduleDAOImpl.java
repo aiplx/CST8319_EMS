@@ -17,6 +17,7 @@ public class ScheduleDAOImpl implements ScheduleDAO {
 
     @Override
     public void addSchedule(ScheduleDTO schedule) {
+        // SQL query to insert a new schedule into the database
         String sql = "INSERT INTO schedule (employee_id, date, start_time, end_time) VALUES (?, ?, ?, ?)";
         try (Connection conn = DatabaseUtil.getInstance().getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
@@ -33,6 +34,7 @@ public class ScheduleDAOImpl implements ScheduleDAO {
 
     @Override
     public void updateSchedule(ScheduleDTO schedule) {
+        // SQL query to update an existing schedule in the database
         String sql = "UPDATE schedule SET employee_id = ?, date = ?, start_time = ?, end_time = ? WHERE schedule_id = ?";
         try (Connection conn = DatabaseUtil.getInstance().getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
@@ -50,6 +52,7 @@ public class ScheduleDAOImpl implements ScheduleDAO {
 
     @Override
     public void deleteSchedule(int scheduleId) {
+        // SQL query to delete a schedule from the database based on its ID
         String sql = "DELETE FROM schedule WHERE schedule_id = ?";
         try (Connection conn = DatabaseUtil.getInstance().getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
@@ -63,6 +66,7 @@ public class ScheduleDAOImpl implements ScheduleDAO {
 
     @Override
     public ScheduleDTO getScheduleById(int scheduleId) {
+        // SQL query to retrieve a schedule's details based on its ID
         String sql = "SELECT * FROM schedule WHERE schedule_id = ?";
         ScheduleDTO schedule = null;
         try (Connection conn = DatabaseUtil.getInstance().getConnection();
@@ -70,6 +74,7 @@ public class ScheduleDAOImpl implements ScheduleDAO {
             stmt.setInt(1, scheduleId);
             ResultSet rs = stmt.executeQuery();
             if (rs.next()) {
+                // Populate the ScheduleDTO object with the retrieved data
                 schedule = new ScheduleDTO();
                 schedule.setScheduleId(rs.getInt("schedule_id"));
                 schedule.setEmployeeId(rs.getInt("employee_id"));
@@ -86,11 +91,13 @@ public class ScheduleDAOImpl implements ScheduleDAO {
 
     @Override
     public List<ScheduleDTO> getAllSchedules() {
+        // SQL query to retrieve all schedules from the database
         String sql = "SELECT * FROM schedule";
         List<ScheduleDTO> schedules = new ArrayList<>();
         try (Connection conn = DatabaseUtil.getInstance().getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql);
              ResultSet rs = stmt.executeQuery()) {
+            // Iterate through the result set and populate the list of schedules
             while (rs.next()) {
                 ScheduleDTO schedule = new ScheduleDTO();
                 schedule.setScheduleId(rs.getInt("schedule_id"));

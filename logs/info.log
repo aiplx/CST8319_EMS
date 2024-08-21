@@ -1611,3 +1611,33 @@ java.sql.SQLIntegrityConstraintViolationException: Column 'phone_number' cannot 
 2024-08-18 21:01:15 | Level: INFO  | Thread: http-bio-8080-exec-9 | Source: DatabaseUtil.getConnection | Message: Database connection established
 2024-08-18 21:01:15 | Level: INFO  | Thread: http-bio-8080-exec-9 | Source: EmployeeDAOImpl.getAllEmployees | Message: Employee added to list: dto.EmployeeDTO@5ed78116
 2024-08-18 21:01:15 | Level: INFO  | Thread: http-bio-8080-exec-9 | Source: EmployeeDAOImpl.getAllEmployees | Message: Employee added to list: dto.EmployeeDTO@1ef5c096
+2024-08-18 22:11:18 | Level: INFO  | Thread: http-bio-8080-exec-4 | Source: DatabaseUtil.<init> | Message: Database connection established
+2024-08-18 22:11:18 | Level: INFO  | Thread: http-bio-8080-exec-4 | Source: EmployeeDAOImpl.getEmployeeByUsernameAndPassword | Message: Employee retrieved: dto.EmployeeDTO@7304d5e5
+2024-08-18 22:11:18 | Level: INFO  | Thread: http-bio-8080-exec-4 | Source: LoginServlet.doPost | Message: Employee logged in: ping
+2024-08-18 22:11:19 | Level: INFO  | Thread: http-bio-8080-exec-6 | Source: DatabaseUtil.getConnection | Message: Database connection established
+2024-08-18 22:11:19 | Level: INFO  | Thread: http-bio-8080-exec-6 | Source: EmployeeDAOImpl.getAllEmployees | Message: Employee added to list: dto.EmployeeDTO@64190f31
+2024-08-18 22:11:19 | Level: INFO  | Thread: http-bio-8080-exec-6 | Source: EmployeeDAOImpl.getAllEmployees | Message: Employee added to list: dto.EmployeeDTO@6026976a
+2024-08-18 22:11:23 | Level: INFO  | Thread: http-bio-8080-exec-8 | Source: DatabaseUtil.getConnection | Message: Database connection established
+2024-08-18 22:11:23 | Level: INFO  | Thread: http-bio-8080-exec-8 | Source: EmployeeDAOImpl.getEmployeeById | Message: Employee retrieved: dto.EmployeeDTO@12dd25ed
+2024-08-18 22:15:01 | Level: INFO  | Thread: http-bio-8080-exec-3 | Source: DatabaseUtil.<init> | Message: Database connection established
+2024-08-18 22:15:01 | Level: INFO  | Thread: http-bio-8080-exec-3 | Source: EmployeeDAOImpl.getAllEmployees | Message: Employee added to list: dto.EmployeeDTO@4011cc17
+2024-08-18 22:15:01 | Level: INFO  | Thread: http-bio-8080-exec-3 | Source: EmployeeDAOImpl.getAllEmployees | Message: Employee added to list: dto.EmployeeDTO@7489bd4d
+2024-08-18 22:15:04 | Level: INFO  | Thread: http-bio-8080-exec-7 | Source: DatabaseUtil.getConnection | Message: Database connection established
+2024-08-18 22:15:04 | Level: INFO  | Thread: http-bio-8080-exec-7 | Source: EmployeeDAOImpl.getEmployeeByUsernameAndPassword | Message: Employee retrieved: dto.EmployeeDTO@769f9a4a
+2024-08-18 22:15:04 | Level: INFO  | Thread: http-bio-8080-exec-7 | Source: LoginServlet.doPost | Message: Employee logged in: ping
+2024-08-18 22:15:05 | Level: INFO  | Thread: http-bio-8080-exec-9 | Source: DatabaseUtil.getConnection | Message: Database connection established
+2024-08-18 22:15:05 | Level: INFO  | Thread: http-bio-8080-exec-9 | Source: EmployeeDAOImpl.getAllEmployees | Message: Employee added to list: dto.EmployeeDTO@46d46a77
+2024-08-18 22:15:05 | Level: INFO  | Thread: http-bio-8080-exec-9 | Source: EmployeeDAOImpl.getAllEmployees | Message: Employee added to list: dto.EmployeeDTO@42ebe675
+2024-08-18 22:15:08 | Level: INFO  | Thread: http-bio-8080-exec-10 | Source: DatabaseUtil.getConnection | Message: Database connection established
+2024-08-18 22:15:08 | Level: WARN  | Thread: http-bio-8080-exec-10 | Source: ManageEmployeesServlet.doPost | Message: Employee not found for ID: 2
+2024-08-18 22:15:10 | Level: INFO  | Thread: http-bio-8080-exec-10 | Source: DatabaseUtil.getConnection | Message: Database connection established
+2024-08-18 22:15:10 | Level: INFO  | Thread: http-bio-8080-exec-10 | Source: EmployeeDAOImpl.getEmployeeById | Message: Employee retrieved: dto.EmployeeDTO@55ea6962
+2024-08-20 20:14:14 | Level: INFO  | Thread: http-bio-8080-exec-3 | Source: DatabaseUtil.<init> | Message: Database connection established
+2024-08-20 20:14:14 | Level: INFO  | Thread: http-bio-8080-exec-3 | Source: EmployeeDAOImpl.getAllEmployees | Message: Employee added to list: dto.EmployeeDTO@37781bc5
+2024-08-20 20:14:14 | Level: INFO  | Thread: http-bio-8080-exec-3 | Source: EmployeeDAOImpl.getAllEmployees | Message: Employee added to list: dto.EmployeeDTO@5c99974e
+2024-08-20 20:14:23 | Level: INFO  | Thread: http-bio-8080-exec-7 | Source: DatabaseUtil.getConnection | Message: Database connection established
+2024-08-20 20:14:23 | Level: INFO  | Thread: http-bio-8080-exec-7 | Source: EmployeeDAOImpl.getEmployeeByUsernameAndPassword | Message: Employee retrieved: dto.EmployeeDTO@316be6f6
+2024-08-20 20:14:23 | Level: INFO  | Thread: http-bio-8080-exec-7 | Source: LoginServlet.doPost | Message: Employee logged in: ping
+2024-08-20 20:14:26 | Level: INFO  | Thread: http-bio-8080-exec-10 | Source: DatabaseUtil.getConnection | Message: Database connection established
+2024-08-20 20:14:26 | Level: INFO  | Thread: http-bio-8080-exec-10 | Source: EmployeeDAOImpl.getAllEmployees | Message: Employee added to list: dto.EmployeeDTO@60b73eec
+2024-08-20 20:14:26 | Level: INFO  | Thread: http-bio-8080-exec-10 | Source: EmployeeDAOImpl.getAllEmployees | Message: Employee added to list: dto.EmployeeDTO@6488b622

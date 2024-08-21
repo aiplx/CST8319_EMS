@@ -4,11 +4,12 @@ import java.sql.Date;
 import java.sql.Time;
 
 public class ScheduleDTO {
-    private int scheduleId;
-    private int employeeId;
-    private Date date;
-    private Time startTime;
-    private Time endTime;
+    // Fields representing the schedule's information
+    private int scheduleId;   // Unique identifier for the schedule
+    private int employeeId;   // ID of the employee associated with this schedule
+    private Date date;        // Date of the schedule
+    private Time startTime;   // Start time of the schedule
+    private Time endTime;     // End time of the schedule
 
     // Getters and Setters
     public int getScheduleId() {
