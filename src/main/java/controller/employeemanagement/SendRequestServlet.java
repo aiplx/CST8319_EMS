@@ -1,4 +1,4 @@
-package controller;
+package controller.employeemanagement;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
