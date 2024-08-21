@@ -1,7 +1,8 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 
 <html>
+<%@include file="navbar-header.jsp"%>
 <head>
     <title>Manager Dashboard</title>
     <style>
@@ -79,6 +80,7 @@
     </c:forEach>
     </tbody>
 </table>
+<%@include file="myfooter.jsp"%>
 </body>
 <script>
     function search() {
