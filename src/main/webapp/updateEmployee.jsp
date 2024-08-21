@@ -8,7 +8,7 @@
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="dto.EmployeeDTO" %>
-<%@ include file="/header.jsp"%>
+<%@ include file="navbar-header.jsp"%>
 <%
     EmployeeDTO employeeToUpdate = (EmployeeDTO) request.getAttribute("employeeToUpdate");
 %>
@@ -16,8 +16,8 @@
 <html>
 <head>
     <title>Update Employee</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/loginStyle.css">
+    <link rel="stylesheet" href="css/my-style.css">
+
     <style>
         .form-container {
             width: 50%;
@@ -135,4 +135,4 @@
 </div>
 </body>
 </html>
-<%@ include file="/footer.jsp"%>
+<%@ include file="myfooter.jsp"%>

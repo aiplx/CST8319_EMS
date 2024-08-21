@@ -9,10 +9,10 @@
 <html>
 <head>
     <title>Login Error</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/my-style.css">
 </head>
 <body>
-<%@ include file="header.jsp" %>
+<%@ include file="navbar-header.jsp" %>
 
 <div class="content">
     <div class="error-container">
@@ -22,7 +22,7 @@
     </div>
 </div>
 
-<%@ include file="footer.jsp" %>
+<%@ include file="myfooter.jsp" %>
 </body>
 </html>
 

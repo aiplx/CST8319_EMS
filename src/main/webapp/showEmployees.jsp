@@ -4,10 +4,10 @@
   Date: 2024-08-17
   Time: 14:57
 --%>
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="java.util.List" %>
 <%@ page import="dto.EmployeeDTO" %>
-<%@ include file="/header.jsp"%>
+<%@ include file="navbar-header.jsp"%>
 <%
     List<EmployeeDTO> employees = (List<EmployeeDTO>) request.getAttribute("employees");
 %>
@@ -15,8 +15,8 @@
 <html>
 <head>
     <title>Show Employees</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/loginStyle.css">
+    <link rel="stylesheet" href="css/my-style.css">
+
     <script type="text/javascript">
         function confirmDelete(employeeId) {
             return confirm("Are you sure you want to delete the employee with ID " + employeeId + "?");
@@ -80,6 +80,7 @@
         %>
     </table>
 </div>
-<%@ include file="/footer.jsp"%>
+
+<%@ include file="myfooter.jsp"%>
 </body>
 </html>
