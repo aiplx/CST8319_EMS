@@ -1,6 +1,7 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html>
+<%@include file="navbar-header.jsp"%>
 <head>
     <title>Employee Request Form</title>
 </head>
@@ -38,5 +39,6 @@
 
     <input type="submit" value="Submit">
 </form>
+<%@include file="myfooter.jsp"%>
 </body>
 </html>
