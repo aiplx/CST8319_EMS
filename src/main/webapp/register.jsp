@@ -8,11 +8,10 @@
 <html>
 <head>
     <title>Register</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/loginStyle.css">
+    <link rel="stylesheet" href="css/my-style.css">
 </head>
 <body>
-<%@ include file="header.jsp"%>
+<%@ include file="navbar-header.jsp"%>
 
 <div class="fieldframe">
     <h2>Register</h2>
@@ -72,6 +71,6 @@
     <p><a href="login.jsp">Already have an account? Login here</a></p>
 </div>
 
-<%@ include file="footer.jsp"%>
+<%@ include file="myfooter.jsp"%>
 </body>
 </html>

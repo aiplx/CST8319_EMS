@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="CST8319PJ" />
+        <module name="EMS" />
       </profile>
     </annotationProcessing>
   </component>

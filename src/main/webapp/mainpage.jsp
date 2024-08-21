@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="dto.EmployeeDTO" %>
 <%@ page import="java.util.List" %>
-<%@ include file="/header.jsp"%>
+<%@ include file="navbar-header.jsp"%>
 <%
     dto.EmployeeDTO employee = (dto.EmployeeDTO) session.getAttribute("employee");
     if (employee == null) {
@@ -22,8 +22,7 @@
 <html>
 <head>
     <title>Employee Management System</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/loginStyle.css">
+    <link rel="stylesheet" href="css/my-style.css">
 </head>
 <body>
 
@@ -37,6 +36,7 @@
         <li><a href="manageEmployees?action=show">Show Employees</a></li>
         <li><a href="manageEmployees?action=add">Add Employee</a></li>
         <li><a href="manageSchedules.jsp">Manage Schedules</a></li>
+        <li><a href="<%= request.getContextPath() %>/MessagesServlet">My Messages</a></li>
 
     </ul>
     <%
@@ -46,7 +46,7 @@
     <ul class="mainpage">
         <li><a href="viewSchedule.jsp">View Schedule</a></li>
         <li><a href="sendRequest.jsp">Send Request</a></li>
-        <li><a href="sendMessages.jsp">Send Messages</a></li>
+        <li><a href="<%= request.getContextPath() %>/MessagesServlet">My Messages</a></li>
     </ul>
     <%
         }
@@ -55,6 +55,6 @@
         <input type="submit" value="Logout">
     </form>
 </div>
-<%@ include file="/footer.jsp"%>
+<%@ include file="myfooter.jsp"%>
 </body>
 </html>
