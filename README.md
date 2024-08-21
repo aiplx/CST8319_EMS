@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project is an Employee Management System that allows for the rmanagement of employees. 
+This project is an Employee Management System that allows for the management of employees. 
 
 ## Table of Contents
 
@@ -34,7 +34,7 @@ This project is an Employee Management System that allows for the rmanagement of
 ### Prerequisites
 
 - Java 8 or higher
-- Apache Tomcat 9 or higher
+- Apache Tomcat 7 or higher
 - MySQL 5.7 or higher
 - Maven
 
@@ -42,7 +42,7 @@ This project is an Employee Management System that allows for the rmanagement of
 
 1. **Clone the repository:**
    ```sh
-   git clone https://github.com/your-username/CST8319_EMS.git
+   git clone https://github.com/aiplx/CST8319_EMS.git
    cd CST8319_EMS
 
 2. **Set up the MySQL database:**
